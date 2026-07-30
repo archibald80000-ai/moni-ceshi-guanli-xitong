@@ -11,16 +11,16 @@
 当前 GitHub 私有仓库地址：
 
 ```text
-https://github.com/archibald80000-ai/-
+https://github.com/archibald80000-ai/moni-ceshi-guanli-xitong
 ```
 
-> 说明：创建仓库时指定名称为“模拟测试管理系统”，但 GitHub/CLI 将纯中文仓库 slug 自动规整为 `-`。仓库仍是本项目的远程备份入口。
+> 说明：创建仓库时指定名称为“模拟测试管理系统”，后来已重命名为 GitHub 可稳定访问的拼音仓库名 `moni-ceshi-guanli-xitong`。当前仓库仍为私有仓库；未连接 GitHub 授权的外部 AI 不能读取私有内容。如需让豆包等未授权 AI 直接访问链接，需要将仓库改为公开，或另建公开脱敏副本。
 
 新设备同步：
 
 ```powershell
-git clone "https://github.com/archibald80000-ai/-.git"
-cd ".\-"
+git clone "https://github.com/archibald80000-ai/moni-ceshi-guanli-xitong.git"
+cd ".\moni-ceshi-guanli-xitong"
 ```
 
 已有设备更新：
