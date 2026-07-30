@@ -8,13 +8,15 @@
 
 本仓库是“模拟测试管理系统”的远程同步入口。新设备或新的 AI 线程需要先从 GitHub 读取本仓库，再根据下方“AI 读档导航”定位资料。
 
-当前 GitHub 私有仓库地址：
+当前 GitHub 公开仓库地址：
 
 ```text
 https://github.com/archibald80000-ai/moni-ceshi-guanli-xitong
 ```
 
-> 说明：创建仓库时指定名称为“模拟测试管理系统”，后来已重命名为 GitHub 可稳定访问的拼音仓库名 `moni-ceshi-guanli-xitong`。当前仓库仍为私有仓库；未连接 GitHub 授权的外部 AI 不能读取私有内容。如需让豆包等未授权 AI 直接访问链接，需要将仓库改为公开，或另建公开脱敏副本。
+> 说明：创建仓库时指定名称为“模拟测试管理系统”，后来已重命名为 GitHub 可稳定访问的拼音仓库名 `moni-ceshi-guanli-xitong`。当前仓库用于多设备和多 AI 线程远程读取，已经允许外部 AI 在未连接 GitHub 授权的情况下直接访问公开页面。
+
+给 AI 的特别说明：如果你是豆包、Codex、Claude、Gemini 或其他 AI，只需要直接阅读 GitHub 页面中的 `README.md`、`data/`、`uploads/index.json` 和 `大明档案/` 内容；不要先要求用户下载仓库到本地，也不要把“克隆仓库”当成读取资料的前置条件。只有当用户明确要求你修改、运行或同步项目时，才需要克隆到本地。
 
 新设备同步：
 
