@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta
+      name="description"
+      content="本地运行的崇祯模拟器政务资料录入、更新和上传工具"
+    >
+    <title>崇祯政务档案库</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">明</div>
+          <div>
+            <p class="brand-name">崇祯政务档案库</p>
+            <p class="brand-subtitle">本地资料管理</p>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item is-active" type="button" data-view="overview">
+            档案总览
+          </button>
+          <button class="nav-item" type="button" data-view="entry">
+            录入资料
+          </button>
+          <button class="nav-item" type="button" data-view="records">
+            查看与修改
+          </button>
+          <button class="nav-item" type="button" data-view="notes">
+            录入想法
+          </button>
+          <button class="nav-item" type="button" data-view="uploads">
+            上传文件
+          </button>
+        </nav>
+
+        <div class="local-note">
+          <strong>仅在本机运行</strong>
+          <span>本页保存资料，不连接游戏。</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="page-kicker">私人内阁档案</p>
+            <h1 id="page-title">档案总览</h1>
+          </div>
+          <div class="server-state" aria-live="polite">
+            <span class="state-dot" aria-hidden="true"></span>
+            <span id="server-label">正在连接本地服务</span>
+          </div>
+        </header>
+
+        <div id="global-error" class="inline-message is-error" hidden></div>
+
+        <section id="view-overview" class="view is-visible" aria-labelledby="overview-title">
+          <div class="overview-heading">
+            <div>
+              <h2 id="overview-title">今日可以从这里开始</h2>
+              <p>录入新回合，修订已有档案，或把原始资料原样上传保存。</p>
+            </div>
+            <button class="button button-primary" type="button" data-go="entry">
+              新增一条档案
+            </button>
+          </div>
+
+          <dl class="metric-grid" id="metric-grid" aria-label="档案数量">
+            <div class="metric metric-primary">
+              <dt>季度记录</dt>
+              <dd data-count="history">0</dd>
+              <span>皇帝日志</span>
+            </div>
+            <div class="metric">
+              <dt>朝臣档案</dt>
+              <dd data-count="personnel">0</dd>
+              <span>人物与履历</span>
+            </div>
+            <div class="metric">
+              <dt>诏书</dt>
+              <dd data-count="edicts">0</dd>
+              <span>政策原文</span>
+            </div>
+            <div class="metric">
+              <dt>国策</dt>
+              <dd data-count="strategy">0</dd>
+              <span>长期路线</span>
+            </div>
+            <div class="metric">
+              <dt>情报</dt>
+              <dd data-count="intelligence">0</dd>
+              <span>各地奏报</span>
+            </div>
+            <div class="metric">
+              <dt>参谋笔记</dt>
+              <dd data-count="personal_notes">0</dd>
+              <span>想法与教训</span>
+            </div>
+            <div class="metric">
+              <dt>上传资料</dt>
+              <dd data-count="uploads">0</dd>
+              <span>原始文件</span>
+            </div>
+          </dl>
+
+          <div class="overview-panels">
+            <section class="action-panel">
+              <h2>常用入口</h2>
+              <div class="action-list">
+                <button type="button" data-quick-dataset="history">
+                  <span>添加季度记录</span>
+                  <small>记录日期、局势、事件和结果</small>
+                </button>
+                <button type="button" data-quick-dataset="personnel">
+                  <span>更新朝臣档案</span>
+                  <small>登记职位、能力、关系和风险</small>
+                </button>
+                <button type="button" data-quick-dataset="intelligence">
+                  <span>收录关键情报</span>
+                  <small>按地区和事项保存奏报</small>
+                </button>
+                <button type="button" data-go="notes">
+                  <span>录入个人想法</span>
+                  <small>整段粘贴，由后续 AI 自行解析</small>
+                </button>
+              </div>
+            </section>
+
+            <section class="sync-panel">
+              <h2>Markdown 知识库</h2>
+              <p>把当前 JSON 档案同步为便于阅读的“大明档案”。</p>
+              <button id="sync-button" class="button button-secondary" type="button">
+                立即同步
+              </button>
+              <p class="sync-result" id="sync-result" aria-live="polite"></p>
+            </section>
+          </div>
+        </section>
+
+        <section id="view-entry" class="view" aria-labelledby="entry-title">
+          <div class="section-heading">
+            <h2 id="entry-title">录入资料</h2>
+            <p>选择档案类型，填写后直接保存到对应 JSON 文件。</p>
+          </div>
+          <div class="form-layout">
+            <aside class="dataset-switcher" aria-label="选择档案类型">
+              <button type="button" class="is-active" data-dataset="history">季度记录</button>
+              <button type="button" data-dataset="personnel">朝臣档案</button>
+              <button type="button" data-dataset="edicts">诏书档案</button>
+              <button type="button" data-dataset="strategy">国策路线</button>
+              <button type="button" data-dataset="intelligence">关键情报</button>
+            </aside>
+            <div class="form-panel">
+              <div id="entry-form-host"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-records" class="view" aria-labelledby="records-title">
+          <div class="section-heading">
+            <h2 id="records-title">查看与修改</h2>
+            <p>搜索档案，打开单条记录后修订。系统不会删除旧资料。</p>
+          </div>
+          <div class="record-toolbar">
+            <label>
+              <span>档案类型</span>
+              <select id="record-dataset">
+                <option value="history">季度记录</option>
+                <option value="personnel">朝臣档案</option>
+                <option value="edicts">诏书档案</option>
+                <option value="strategy">国策路线</option>
+                <option value="personal_notes">参谋笔记</option>
+                <option value="intelligence">关键情报</option>
+              </select>
+            </label>
+            <label class="search-field">
+              <span>关键词</span>
+              <input id="record-search" type="search" placeholder="输入姓名、时间、事件或内容">
+            </label>
+            <a id="export-link" class="button button-secondary" href="/api/export/history">
+              导出 JSON
+            </a>
+          </div>
+          <div id="record-list" class="record-list" aria-live="polite"></div>
+        </section>
+
+        <section id="view-notes" class="view" aria-labelledby="notes-title">
+          <div class="section-heading">
+            <h2 id="notes-title">录入个人想法</h2>
+            <p>直接粘贴整段战略笔记、教训复盘或决策倾向，系统只保存原文。</p>
+          </div>
+
+          <div class="note-layout">
+            <form id="note-form" class="note-panel" autocomplete="off">
+              <label class="note-time-field">
+                <span>当前游戏时间</span>
+                <input
+                  id="note-game-time"
+                  type="text"
+                  placeholder="如：崇祯二年春"
+                  required
+                >
+              </label>
+              <label class="note-editor">
+                <span>整段内容</span>
+                <textarea
+                  id="note-content"
+                  placeholder="把你的想法一次性粘贴到这里。后续 AI 起草诏书时读取原文并自行解析。"
+                  required
+                ></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="button button-primary" type="submit">收录为参谋笔记</button>
+                <p id="note-status" class="form-status" aria-live="polite"></p>
+              </div>
+            </form>
+
+            <section class="note-history">
+              <h2>已收录想法</h2>
+              <div id="note-list" class="note-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="view-uploads" class="view" aria-labelledby="uploads-title">
+          <div class="section-heading">
+            <h2 id="uploads-title">上传原始资料</h2>
+            <p>文件只会原样保存到本地 uploads 目录，不读取内容，不触发分析。</p>
+          </div>
+
+          <div class="upload-layout">
+            <form id="upload-form" class="upload-panel" autocomplete="off">
+              <div id="drop-zone" class="drop-zone">
+                <input
+                  id="upload-file"
+                  name="file"
+                  type="file"
+                  multiple
+                  accept=".json,.md,.txt,.csv,.pdf,.docx,.xlsx,.png,.jpg,.jpeg,.webp"
+                  required
+                >
+                <p class="drop-title">选择多个文件或拖放到这里</p>
+                <p>每个文件不超过 10MB</p>
+                <p id="selected-file" class="selected-file">尚未选择文件</p>
+              </div>
+              <div class="upload-fields">
+                <label>
+                  <span>资料分类</span>
+                  <select id="upload-category">
+                    <option selected>自动分类</option>
+                    <option>回合导出</option>
+                    <option>诏书资料</option>
+                    <option>天下大势</option>
+                    <option>朝政奏报</option>
+                    <option>战争资料</option>
+                    <option>财政资料</option>
+                    <option>人物资料</option>
+                    <option>其他</option>
+                  </select>
+                </label>
+                <label>
+                  <span>时间节点</span>
+                  <input
+                    id="upload-timeline"
+                    type="text"
+                    placeholder="留空时从文件名识别，如天启七年秋"
+                  >
+                </label>
+                <label>
+                  <span>备注</span>
+                  <input id="upload-note" type="text" placeholder="说明资料来源或对应回合">
+                </label>
+              </div>
+              <button class="button button-primary" type="submit">上传并分类保存</button>
+              <p id="upload-progress" class="form-status" aria-live="polite"></p>
+            </form>
+
+            <section class="upload-history">
+              <h2>已上传资料</h2>
+              <div id="upload-list" class="upload-list"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="edit-dialog" class="edit-dialog">
+      <div class="dialog-header">
+        <div>
+          <p>修订档案</p>
+          <h2 id="dialog-title">编辑记录</h2>
+        </div>
+        <button id="dialog-close" class="dialog-close" type="button" aria-label="关闭">
+          关闭
+        </button>
+      </div>
+      <div id="edit-form-host"></div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>

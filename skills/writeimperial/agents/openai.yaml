@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Imperial Edicts"
+  short_description: "Draft Chongzhen simulator imperial edicts from local archives."
+  default_prompt: "读取最新崇祯档案，按四段制式拟定可复制进游戏的诏书。"
