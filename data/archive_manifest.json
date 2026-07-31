@@ -9,6 +9,7 @@
     "data/personnel_current.json",
     "data/current_directives.json",
     "data/history/CZ10-SUMMER-EXEC-1.json",
+    "data/strategy/崇祯10年夏执行考成.json",
     "大明档案/国家态势/崇祯10年夏季国家态势总览.md",
     "大明档案/国家态势/崇祯10年夏季军械库存.md",
     "大明档案/朝臣档案/崇祯10年夏季朝臣任职复核.md"
@@ -25,6 +26,7 @@
     "当前财政对账": "大明档案/财政报告/崇祯10年夏财政与专项支出对账.md",
     "当前战争记录": "大明档案/战争记录/崇祯10年夏辽阳夜袭东江恢复与四路靖乱记录.md",
     "当前季度记录": "data/history/CZ10-SUMMER-EXEC-1.json",
+    "当前执行考成": "data/strategy/崇祯10年夏执行考成.json",
     "上季正式诏书": "大明档案/诏书全集/崇祯10年春《竞贸购种兴农安秦续制固藩诏》.md",
     "上季诏书结构化考成": "data/edicts/崇祯10年春竞贸购种兴农安秦续制固藩诏.json",
     "国家态势历史底座": "data/game_state.json",
