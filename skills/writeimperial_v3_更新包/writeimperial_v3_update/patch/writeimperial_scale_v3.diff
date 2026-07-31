@@ -1,0 +1,568 @@
+--- a/skills/writeimperial/SKILL.md
++++ b/skills/writeimperial/SKILL.md
+@@ -1,61 +1,251 @@
+ ---
+ name: writeimperial
+-description: Draft, revise, and archive imperial edicts for the Chinese historical strategy workflow "历史模拟器：崇祯". Use when asked to read local Chongzhen simulator archives, analyze a quarterly situation, prepare emperor-to-minister密谈话术, draft four-section edicts, set考成/奖惩 targets, or update the project archives for edicts, strategy, intelligence, personnel, and history records.
++description: Draft, revise, validate, and optionally archive imperial edicts for the Chinese historical strategy workflow "历史模拟器：崇祯". Use when asked to read simulator archives, analyze a quarterly situation, prepare emperor-to-minister密谈话术, draft four-section edicts, calculate考成/奖惩 targets with quarterly execution correction, or update edict, strategy, intelligence, personnel, and history records.
+ ---
+
+ # writeimperial
+
+ ## Purpose
+
+-Use this skill to produce actionable 崇祯 simulator strategy and诏书 from the local archive. The core loop is: read档案 -> judge局势 -> lock季度主轴 -> draft four-section分条诏书 -> validate -> optionally write档案 when explicitly authorized.
++Use this skill to produce actionable 崇祯 simulator strategy and诏书 from the latest archive. The mandatory loop is:
++
++`读最新档案 -> 提取实际基线 -> 判断季度主轴 -> 分类任务 -> 用 Scale v3 计算目标 -> 起草四段诏书 -> 校验拥塞与红线 -> 等待游戏反馈 -> 更新执行系数`
++
++Never use a universal `+30%` bottom-line and `+50%` upper-target rule. Different task types have different growth rates, execution loss, uplift caps, and quarterly correction limits.
+
+ ## Core Workflow
+
+-1. Ground in the latest archive before writing.
+-   - Read the newest `朝政纪要`, previous季诏书, `国家态势`, `国策路线`, `朝臣档案`, `密谈记录`, and relevant `data/*.json`.
+-   - If the user supplies screenshots or pasted minister advice, treat them as current player material and reconcile them with archive facts.
+-   - If archive facts and user material conflict, prefer the latest季度纪要 and mark user additions as strategic intent or推演.
+-
+-2. Extract the current crisis map.
+-   - Always cover: 军事, 内政, 财政, 外交, 民变风险, 朝堂/派系, 疫病/灾荒, 边防, 军工.
+-   - Identify the single most lethal near-term risk and the 2-4 supporting priorities.
+-   - Do not spread one edict across unrelated high-resistance reforms unless the user explicitly asks for a national mobilization诏.
+-
+-3. Lock the quarterly axis.
+-   - Use at most 3-5 main lines, e.g. “救大同、截陕晋、续撤辽、节财用”.
+-   - Make the first line of each edict section a concrete core command because the game AI prioritizes section-leading instructions.
+-   - Keep previous effective policies unless the latest纪要 proves they failed.
+-
+-4. Draft in four fixed sections.
+-   - Required order: `【军事】`, `【内政】`, `【外交】`, `【其他】`.
+-   - Each section first line must be an imperative core command.
+-   - Then use numbered clauses `1. 2. 3.` with execution owner, department/region, money/grain, deadline, bottom-line target, upper target, supervision, reward, and punishment.
+-
+-5. Set targets and rewards.
+-   - If last season has measured results, never repeat the same target.
+-   - Default: bottom-line target should exceed last actual result; user preference is often +`30%`.
+-   - If user asks for上考 or “目标提高”, set上考 around +`50%` above actual or bottom-line.
+-   - Put rewards early, especially for军队, 官僚, 农民, 士绅, and useful technical officials.
+-
+-6. Validate before finalizing or writing.
+-   - Check four-section structure and `钦此。`.
+-   - Check numeric style: money, grain, troops, deadlines, satisfaction, stock, production use Arabic digits; 5+ digit quantities use `万` where natural.
+-   - Scan forbidden vague phrases and forbidden strategies.
+-   - If writing JSON archives, parse every touched JSON after writing.
+-
+-7. Archive only with explicit authorization.
+-   - You may suggest archive updates anytime.
+-   - Do not edit files unless the user says “写入档案”, “更新档案”, “落档”, or otherwise clearly authorizes writing.
+-   - Never claim game actions were executed; only state that local档案 were updated.
++### 1. Ground in the latest archive
++
++Before drafting, read the newest:
++
++- `朝政纪要`
++- previous-quarter edict
++- `国家态势` / `game_state`
++- `国策路线`
++- `朝臣档案`
++- `密谈记录`
++- relevant `data/*.json`
++- any user screenshots or pasted game feedback
++
++Use the newest measured actual result as the baseline. Do not use the previous edict target as the new baseline.
++
++If sources conflict:
++
++1. prefer the latest executed `朝政纪要`;
++2. retain conflicting values as separate口径;
++3. mark evidence quality;
++4. do not silently choose the most optimistic value.
++
++### 2. Extract the crisis map
++
++Always consider:
++
++- 军事
++- 内政
++- 财政
++- 外交
++- 民变
++- 朝堂/派系
++- 疫病/灾荒
++- 边防
++- 军工
++- 情报
++- 执行能力
++
++Identify:
++
++- 1 decisive quarterly main effort;
++- up to 2 hard supports;
++- up to 3 maintenance lines.
++
++Do not make all national policies grow sharply in the same quarter.
++
++### 3. Classify every numeric target
++
++Before calculating a target, assign one Scale v3 task type:
++
++- `A` mature production
++- `B` single military operation
++- `C` training, quality, or force reorganization
++- `D` pacification, resettlement, and social governance
++- `E` engineering, logistics, and storage
++- `F` new institution in its first quarter
++- `G` mature institution
++- `H` intelligence and early warning
++- `I` diplomacy, trade, and maritime activity
++- `J` stock, establishment, fixed headcount, or fixed recurring appropriation
++- `K` system outcomes such as satisfaction, morale, popular support, corruption, or authority
++- `L` threshold or zero-tolerance conditions such as supply=`0`, leaks=`0`, lost guns=`0`
++
++Read `references/target_scale_v3.md` and `config/execution_scale_v3.json` whenever a request includes targets, upper assessments, expansion, quarterly correction, or comparison with prior results.
++
++### 4. Separate stock from performance
++
++Do not expand everything merely because a new quarter begins.
++
++Default stock rules:
++
++- total troop establishment, fixed rewards, and standing institutions: `0%–3%` quarterly change;
++- ordinary hard cap: `5%`;
++- emergency cap: `10%` only with explicit resources and strategic need.
++
++Prefer expanding:
++
++- qualified troops;
++- training pass rate;
++- readiness;
++- ammunition availability;
++- logistics speed;
++- production quality;
++- settlement retention;
++- intelligence accuracy;
++- tax arrival rate.
++
++Do not rely on expanding paper headcount.
++
++### 5. Calculate the four target layers
++
++For every major measurable clause, calculate internally:
++
++1. `actual_baseline`: latest measured actual;
++2. `imperial_real_target`: the result the state truly needs;
++3. `edict_bottom_line`: the stated target after execution-loss uplift;
++4. `upper_target`: a limited stretch above the stated bottom line;
++5. `failure_line`: the point requiring method, resource, or personnel correction.
++
++The calculation must obey task-specific:
++
++- real growth range;
++- forecast execution coefficient;
++- uplift cap;
++- upper-target cap;
++- quarterly coefficient-change cap.
++
++Do not expose the formula in the finished edict unless the user asks. The edict should present clean bottom-line, upper-target, deadline, evidence, reward, failure line, and red lines.
++
++### 6. Use quarterly feedback
++
++After receiving a new `朝政纪要`:
++
++1. compute realized completion by task type;
++2. separate external shock, resource failure, coordination failure, target distortion, and personal negligence;
++3. update the execution coefficient using recent comparable tasks;
++4. limit ordinary coefficient movement to `±0.05` per quarter;
++5. allow `±0.08` only after two consecutive results in the same direction;
++6. reserve `±0.10` for annual recalibration or a proven structural change.
++
++Never let a single disaster quarter permanently reduce capacity, and never let one exceptional overachievement inflate all future targets.
++
++### 7. Lock the quarterly axis
++
++Use:
++
++- 1 decisive main effort;
++- 2 hard supports;
++- 3 maintenance lines.
++
++Each section-leading sentence must contain a concrete command and owner, because the game AI prioritizes section-leading instructions.
++
++Keep effective prior policies unless the latest feedback shows failure.
++
++### 8. Draft in four fixed sections
++
++Required order:
++
++- `【军事】`
++- `【内政】`
++- `【外交】`
++- `【其他】`
++
++Each major clause should contain:
++
++- owner;
++- backup or audit owner;
++- region or department;
++- concrete action;
++- resources;
++- deadline;
++- bottom-line target;
++- upper target;
++- evidence requirement;
++- reward;
++- failure line;
++- punishment for red-line conduct;
++- fallback when war or disaster makes the main plan impossible.
++
++### 9. Reward first, but distinguish recurring and performance rewards
++
++Preserve recurring reward credibility when affordable.
++
++Do not automatically increase recurring appropriations every quarter. Default recurring appropriation change is `0%`; ordinary adjustment cap is `±5%`.
++
++Increase performance rewards only when linked to:
++
++- verified military readiness;
++- actual arrival of grain or silver;
++- qualified production;
++- retained settlement;
++- effective warning;
++- reduced losses;
++- clean evidence.
++
++### 10. Validate before finalizing
++
++Check:
++
++- four-section structure;
++- `钦此。`;
++- Arabic digits;
++- 5+ digit quantities expressed naturally with `万`;
++- no universal `+30%/+50%` target inflation;
++- no more than 1 main effort, 2 hard supports, 3 maintenance lines;
++- no stock target inflated like a production target;
++- no satisfaction/corruption target written as if it were direct production;
++- no impossible intelligence accuracy jump;
++- no threshold condition numerically “raised” above zero;
++- no conflict with fiscal, military, or institutional red lines.
++
++If writing JSON, parse every touched JSON file.
++
++### 11. Archive only with explicit authorization
++
++You may suggest updates, but do not edit the archive unless the user explicitly authorizes writing.
++
++Never claim game actions were executed. State only that files were drafted or local archives were updated.
++
++## Target Output Rules
++
++For direct edict requests:
++
++1. output the finished edict first unless analysis was requested;
++2. keep internal Scale calculations out of the formal text;
++3. after the edict, optionally provide a compact target-calculation note.
++
++For analysis or参谋 requests, use:
++
++- 档案依据
++- 局势判断
++- 季度主轴
++- Scale分类
++- 目标计算
++- 风险与败案
++- 推荐方案
++- 诏书草案
++- 档案更新建议
+
+ ## References
+
+-- Read `references/edict_rules.md` when drafting or revising an诏书.
++- Read `references/edict_rules.md` for formal structure and clause validation.
++- Read `references/target_scale_v3.md` for all target calculations and quarterly updates.
++- Read `config/execution_scale_v3.json` for machine-readable defaults and caps.
+ - Read `references/archive_map.md` when deciding which project files to inspect or update.
+-- Read `references/style_examples.md` when you need a compact example of the preferred条款 style.
++- Read `references/style_examples.md` for compact clause style.
+
+ ## Output Defaults
+
+-- For direct诏书 requests: output the finished edict first unless the user asks for analysis.
+-- For参谋 requests: use concise sections: 档案依据, 局势判断, 优先级, 风险推演, 推荐方案, 诏书草案, 白话解释, 档案更新建议.
+-- For write requests: summarize changed files and validation results after updating.
++- Finished edicts use the established four-section form.
++- Target calculations use the latest actual baseline, not the previous target.
++- Force size and recurring appropriations remain broadly stable unless explicitly justified.
++- Quality, readiness, production, logistics, retention, and verified outcomes may expand within Scale v3 limits.
++- For archive writes, summarize changed files, coefficient updates, and validation results.
+
+--- a/skills/writeimperial/references/edict_rules.md
++++ b/skills/writeimperial/references/edict_rules.md
+@@ -27,33 +27,200 @@
+ 钦此。
+ ```
+
+-Each section's first line is the core command. It must name the main owner and action, not a slogan.
++Each section's first line is the concrete core command and must name the principal owner and action.
++
++## Quarterly Workload Limit
++
++A normal quarterly edict may contain:
++
++- `1` decisive main effort;
++- at most `2` hard supports;
++- at most `3` maintenance lines.
++
++A national emergency mobilization may exceed this only when the archive and user explicitly require it. Extra projects receive a lower execution-focus coefficient.
+
+ ## Clause Checklist
+
+ Each major clause should specify:
+
+-- 执行人 and backup/监察官
+-- 衙门 or region
+-- concrete action
+-- money, grain, troops, tools, or materials
+-- deadline such as `30日`, `60日`, `90日`, `6个月`
+-- bottom-line target and上考 target
+-- reward for达标/上考
+-- punishment for虚报、延误、贪挪、扰民、遗炮、通虏
++- current actual baseline;
++- task type from Scale v3;
++- execution owner;
++- backup, audit, or successor;
++- department or region;
++- concrete action;
++- money, grain, troops, tools, or materials;
++- deadline;
++- stated bottom-line target;
++- upper target;
++- failure line;
++- evidence requirement;
++- reward for verified completion;
++- punishment for fraud, delay, embezzlement, harassment, leaks, lost guns, or collaboration;
++- fallback plan when war, disaster, or resource failure prevents the main plan.
++
++The finished formal edict does not need to display internal formulas.
+
+ ## Numeric Style
+
+-- Use Arabic digits for quantities: `5万两`, `2.5万人`, `80处`, `30日`, `70`, `35`.
+-- For 5+ digit quantities, prefer `万`: use `1.2万人`, not `12000人`; use `20万两`, not `200000两`.
+-- Proper nouns and institutions may keep established Chinese forms, e.g. `王二`, `九品`, `四权互核`, but avoid Chinese numerals for measured quantities.
+-
+-## Target Rules
+-
+-- If there is a prior actual value, do not reuse it as the new target.
+-- Default bottom-line target: prior actual + about `30%`, adjusted for disaster constraints.
+-- Default上考 target: bottom-line or prior actual + about `50%`.
+-- If disaster, flood, plague, or war makes punishment unfair, write “免罚但限期补效”; do not erase accountability.
++- Use Arabic digits: `5万两`, `2.5万人`, `80处`, `30日`, `70`, `35`.
++- For 5+ digit quantities, prefer `万`.
++- Institutions may keep established Chinese-number names such as `九品` and `四权互核`.
++- Use percentage points for rate or score changes when appropriate; do not confuse them with percentage growth.
++
++## Mandatory Target Rules
++
++### 1. Baseline
++
++- Use the latest measured actual result.
++- Never use the previous target as the new baseline.
++- If the actual value is uncertain, show a range or evidence level before calculating.
++- If two current sources conflict, do not silently choose the larger value.
++
++### 2. No universal target uplift
++
++The former universal rule of bottom-line `+30%` and upper target `+50%` is prohibited.
++
++Targets must use `references/target_scale_v3.md`.
++
++### 3. Four target layers
++
++Internally calculate:
++
++- `actual_baseline`
++- `imperial_real_target`
++- `edict_bottom_line`
++- `upper_target`
++- `failure_line`
++
++The edict normally presents the bottom line, upper target, failure line, evidence, and reward.
++
++### 4. Stock and establishment
++
++For troop establishment, fixed recurring rewards, standing institutions, and similar stock indicators:
++
++- default quarterly change: `0%–3%`;
++- ordinary cap: `5%`;
++- emergency cap: `10%` with explicit resources and reasons.
++
++Prefer improving readiness, qualified strength, morale process indicators, logistics, equipment availability, and training pass rate.
++
++### 5. Quality and performance
++
++Quality, production, logistics, retention, and verified results may grow according to task type.
++
++Do not use percentage growth when:
++
++- the baseline is near zero;
++- the metric is a score or rate;
++- the metric is a zero-tolerance threshold;
++- the metric is a one-time milestone.
++
++Use absolute points, fixed quantities, or milestones instead.
++
++### 6. Upper target
++
++Upper targets are limited stretches, not another uncontrolled `+50%`.
++
++Typical upper stretch above stated bottom line:
++
++- mature production: `8%–12%`, cap `15%`;
++- military operation: `10%–15%`, cap `20%`;
++- training/quality: `5%–10%`, cap `12%`;
++- social governance: `10%–15%`, cap `20%`;
++- engineering/logistics: `10%–15%`, cap `20%`;
++- mature institution: `5%–10%`, cap `15%`;
++- intelligence accuracy: `+1–2` percentage points, cap `+3`;
++- trade and maritime: `10%–15%`, cap `20%`;
++- stock/establishment: `0%–2%`, cap `3%`;
++- new institution: one additional verified milestone, not a large output percentage.
++
++### 7. System outcomes
++
++Do not directly command:
++
++- satisfaction `+5`;
++- popular support `+5`;
++- corruption `-5`;
++- authority `+5`;
++
++as if these were factory outputs.
++
++Instead target controllable leading indicators:
++
++- pay arrival;
++- relief arrival;
++- grain price;
++- military harassment;
++- audit discrepancy;
++- wrongful cases;
++- promotion delivery;
++- casualty and pension handling.
++
++The game may then calculate satisfaction, support, corruption, and authority.
++
++### 8. Threshold conditions
++
++For conditions such as:
++
++- rebel supply=`0`;
++- leaks=`0`;
++- lost guns=`0`;
++- core forts lost=`0`;
++
++do not “raise” zero. Keep the threshold and increase resilience or verification:
++
++- dual-source checks;
++- continuous days maintained;
++- backup route;
++- recovery time;
++- number of independent audits.
++
++## Quarterly Coefficient Update
++
++After game feedback, calculate a comparable realization ratio and classify causes.
++
++Default update:
++
++```text
++new_coefficient =
++    old_coefficient × 0.70
++  + recent_comparable_median × 0.30
++```
++
++Limits:
++
++- ordinary quarterly coefficient movement: `±0.05`;
++- after two consecutive same-direction results: `±0.08`;
++- annual recalibration or proven structural change: `±0.10`;
++- extreme war, plague, flood, or contradictory data may be excluded from the rolling sample.
++
++Do not punish an official for target distortion caused primarily by the edict itself.
++
++## Target-Growth Update
++
++Quarterly real-target growth is separate from execution-loss uplift.
++
++Use the latest actual and completion band:
++
++| Result against expected real outcome | Next-quarter rule |
++|---|---|
++| `≥110%` | use upper half of category growth range |
++| `95%–109%` | use normal category growth |
++| `80%–94%` | use lower half or maintain |
++| `60%–79%` | pause growth; repair method/resources |
++| `<60%` | do not inflate; use fallback, sandbox, or change owner/method |
++
++A missed quarter does not automatically reduce the long-term strategic objective, but the next quarterly target must not be inflated merely to look ambitious.
++
++## Disaster and War
++
++When disaster, flood, plague, or war makes ordinary punishment unfair:
++
++- classify external shock;
++- preserve accountability for concealment, embezzlement, or reckless command;
++- use the fallback plan;
++- write `免罚但限期补效` only when the failure was genuinely outside the official's control.
+
+ ## Forbidden Empty Phrases
+
+@@ -65,10 +232,7 @@
+ - 恢复财政
+ - 稳定民心
+
+-Replace with concrete commands:
+-
+-- `拨银5万两、粮2万石，30日内入西安、延安2仓；每5日具给粮册、死亡册、归屯册。`
+-- `卢象升30日内复验大同、宣府、蓟州烽堠，遗炮为0，守口夜巡有功者赏。`
++Replace them with concrete commands, resources, deadlines, targets, evidence, and failure lines.
+
+ ## Strategic Red Lines
+
+@@ -81,21 +245,24 @@
+ - 高阻力宗室大改
+ - 低威望时全国性激进改革
+ - 让情报军掌刑名、征税、调兵、抄家、刑讯
++- 以扩大纸面兵额代替提升战力
++- 用新券偿还旧券
++- 以未核实数据大规模问罪
+
+ ## Section Guidance
+
+ ### 军事
+
+-Use for剿抚、边防、换防、清野、东江、新军、火器、犒军. Tie military actions to logistics and troop morale. Distinguish主帅、中层将官、普通士卒 in奖惩.
++Use for剿抚、边防、换防、清野、东江、新军、火器、犒军. Tie military action to logistics, readiness, morale credibility, and preservation of the main force.
+
+ ### 内政
+
+-Use for赈灾、春耕、种子、仓储、水利、疫病、税源、养廉、官僚奖赏. Do not挪陕西赈银 into border or factory costs unless explicitly ordered.
++Use for relief, agriculture, seed, storage, water, epidemic control, revenue, official rewards, and pensions. Do not move protected relief funds into factories or frontier projects without explicit authority.
+
+ ### 外交
+
+-Use for蒙古互市、朝鲜东江、海贸、禁炮、郑氏水师、西洋工匠. Do not expand spending casually; prefer绩效给付.
++Use for Mongol trade, Korea and Dongjiang, maritime trade, prohibited exports, Zheng maritime forces, and overseas technical acquisition. Prefer performance payment and diversification over uncontrolled spending.
+
+ ### 其他
+
+-Use for四权互核、三硬七辅、九品考成、密探、查账、刑部、吏部、归档、派系平衡. Keep权责 separated: 王承恩掌账不掌刑, 刑部掌刑不掌账, 内阁复核, 司礼监封册.
++Use for execution Scale, audit, nine-grade assessment, intelligence boundaries, legal process, succession, data verification, policy sandbox, and archival feedback.
+
+# New files to add:
+# skills/writeimperial/references/target_scale_v3.md
+# skills/writeimperial/config/execution_scale_v3.json
+# skills/writeimperial/config/execution_scale_v3.schema.json
+# skills/writeimperial/templates/quarterly_scale_feedback.json
+# skills/writeimperial/tests/scale_examples.md

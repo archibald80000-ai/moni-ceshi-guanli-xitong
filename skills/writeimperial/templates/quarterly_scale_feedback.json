@@ -1,0 +1,96 @@
+{
+  "version": "scale-v3.1-quarterly-feedback",
+  "quarter": "崇祯X年X季",
+  "task": {
+    "name": "",
+    "type": "A",
+    "position": "main",
+    "metric_kind": "quantity",
+    "evidence_grade": "B"
+  },
+  "baseline": {
+    "latest_actual": null,
+    "source": "",
+    "conflict_range": null
+  },
+  "targets": {
+    "imperial_real_target": null,
+    "forecast_execution_coefficient": null,
+    "edict_bottom_line": null,
+    "upper_target": null,
+    "failure_line": null
+  },
+  "institution": {
+    "is_new_institution": false,
+    "launch_quarter": "",
+    "regular_supervising_office": "",
+    "temporary_concurrent_role": "",
+    "annual_assessment_quarter": "",
+    "annual_real_target": null,
+    "quarterly_cumulative_path": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "current_quarter_number": null,
+    "direct_output_target": null,
+    "system_outcome_target": null,
+    "system_outcome_actual": null,
+    "sunset_quarter": "",
+    "sunset_decision": ""
+  },
+  "first_quarter_assessment": {
+    "setup_score": null,
+    "direct_output_score": null,
+    "system_outcome_score": null,
+    "visible_effect_achieved": null,
+    "visible_effect_evidence": []
+  },
+  "annual_assessment": {
+    "quarter_1_result": null,
+    "quarter_2_result": null,
+    "quarter_3_result": null,
+    "quarter_4_result": null,
+    "annual_completion_rate": null,
+    "annual_system_outcome": null,
+    "decision": ""
+  },
+  "temporary_institution_review": {
+    "years_active": null,
+    "annual_review_result": "",
+    "regular_office_can_take_over": null,
+    "overlap_with_regular_office": null,
+    "budget_growth": null,
+    "sunset_due": null,
+    "recommended_action": ""
+  },
+  "result": {
+    "actual": null,
+    "realization_against_bottom_line": null,
+    "realization_against_real_target": null,
+    "threshold_maintained_days": null
+  },
+  "attribution": {
+    "resource_shortage": 0.0,
+    "external_shock": 0.0,
+    "coordination_failure": 0.0,
+    "target_distortion": 0.0,
+    "personal_negligence": 0.0,
+    "notes": []
+  },
+  "coefficient_update": {
+    "old": null,
+    "recent_comparable_median": null,
+    "raw_new": null,
+    "applied_new": null,
+    "change_cap_used": "ordinary_0.05"
+  },
+  "next_quarter": {
+    "real_growth": null,
+    "uplift": null,
+    "stretch": null,
+    "method_change": [],
+    "fallback": []
+  }
+}

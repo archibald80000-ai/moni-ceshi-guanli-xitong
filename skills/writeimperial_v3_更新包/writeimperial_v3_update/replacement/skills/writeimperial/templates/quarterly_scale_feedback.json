@@ -1,0 +1,51 @@
+{
+  "version": "scale-v3-quarterly-feedback",
+  "quarter": "崇祯X年X季",
+  "task": {
+    "name": "",
+    "type": "A",
+    "position": "main",
+    "metric_kind": "quantity",
+    "evidence_grade": "B"
+  },
+  "baseline": {
+    "latest_actual": null,
+    "source": "",
+    "conflict_range": null
+  },
+  "targets": {
+    "imperial_real_target": null,
+    "forecast_execution_coefficient": null,
+    "edict_bottom_line": null,
+    "upper_target": null,
+    "failure_line": null
+  },
+  "result": {
+    "actual": null,
+    "realization_against_bottom_line": null,
+    "realization_against_real_target": null,
+    "threshold_maintained_days": null
+  },
+  "attribution": {
+    "resource_shortage": 0.0,
+    "external_shock": 0.0,
+    "coordination_failure": 0.0,
+    "target_distortion": 0.0,
+    "personal_negligence": 0.0,
+    "notes": []
+  },
+  "coefficient_update": {
+    "old": null,
+    "recent_comparable_median": null,
+    "raw_new": null,
+    "applied_new": null,
+    "change_cap_used": "ordinary_0.05"
+  },
+  "next_quarter": {
+    "real_growth": null,
+    "uplift": null,
+    "stretch": null,
+    "method_change": [],
+    "fallback": []
+  }
+}

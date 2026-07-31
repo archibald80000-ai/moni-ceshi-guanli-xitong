@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "writeimperial execution scale v3",
+  "type": "object",
+  "required": [
+    "version",
+    "coefficient_bounds",
+    "task_types",
+    "modifiers",
+    "quarterly_update"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "coefficient_bounds": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "task_types": {
+      "type": "object",
+      "required": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ],
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "modifiers": {
+      "type": "object"
+    },
+    "quarterly_update": {
+      "type": "object",
+      "required": [
+        "old_weight",
+        "recent_comparable_median_weight",
+        "window",
+        "ordinary_max_change",
+        "annual_or_structural_max_change"
+      ]
+    },
+    "completion_bands": {
+      "type": "array"
+    },
+    "workload_limit": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

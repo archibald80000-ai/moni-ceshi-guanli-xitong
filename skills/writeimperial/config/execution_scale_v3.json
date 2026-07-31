@@ -1,0 +1,535 @@
+{
+  "version": "3.1",
+  "description": "Scale v3.1: 即时成效、年度考成与三年日落。writeimperial quarterly target growth, execution-loss uplift, upper target, correction defaults, institution lifecycle, and K-class outcome rules",
+  "coefficient_bounds": [
+    0.25,
+    1.15
+  ],
+  "task_types": {
+    "A": {
+      "name": "成熟生产流水线",
+      "real_growth_default": 0.08,
+      "real_growth_range": [
+        0.05,
+        0.12
+      ],
+      "real_growth_cap": 0.15,
+      "execution_default": 1.0,
+      "execution_range": [
+        0.9,
+        1.1
+      ],
+      "uplift_default": 0.05,
+      "uplift_range": [
+        0.0,
+        0.1
+      ],
+      "uplift_cap": 0.15,
+      "uplift_quarter_step": 0.03,
+      "stretch_default": 0.1,
+      "stretch_range": [
+        0.08,
+        0.12
+      ],
+      "stretch_cap": 0.15,
+      "stretch_quarter_step": 0.02
+    },
+    "B": {
+      "name": "单一军事行动",
+      "real_growth_default": 0.1,
+      "real_growth_range": [
+        0.05,
+        0.15
+      ],
+      "real_growth_cap": 0.2,
+      "execution_default": 0.75,
+      "execution_range": [
+        0.65,
+        0.85
+      ],
+      "uplift_default": 0.2,
+      "uplift_range": [
+        0.15,
+        0.25
+      ],
+      "uplift_cap": 0.35,
+      "uplift_quarter_step": 0.05,
+      "stretch_default": 0.12,
+      "stretch_range": [
+        0.1,
+        0.15
+      ],
+      "stretch_cap": 0.2,
+      "stretch_quarter_step": 0.03
+    },
+    "C": {
+      "name": "训练质量军制改编",
+      "real_growth_default": 0.06,
+      "real_growth_range": [
+        0.03,
+        0.1
+      ],
+      "real_growth_cap": 0.12,
+      "score_point_default": 4,
+      "score_point_cap": 8,
+      "rate_point_default": 4,
+      "rate_point_cap": 8,
+      "execution_default": 0.72,
+      "execution_range": [
+        0.6,
+        0.85
+      ],
+      "uplift_default": 0.15,
+      "uplift_range": [
+        0.1,
+        0.2
+      ],
+      "uplift_cap": 0.3,
+      "uplift_quarter_step": 0.05,
+      "stretch_default": 0.08,
+      "stretch_range": [
+        0.05,
+        0.1
+      ],
+      "stretch_cap": 0.12,
+      "stretch_quarter_step": 0.02
+    },
+    "D": {
+      "name": "招抚归屯社会治理",
+      "real_growth_default": 0.06,
+      "real_growth_range": [
+        0.03,
+        0.1
+      ],
+      "real_growth_cap": 0.15,
+      "execution_default": 0.58,
+      "execution_range": [
+        0.45,
+        0.7
+      ],
+      "uplift_default": 0.3,
+      "uplift_range": [
+        0.25,
+        0.35
+      ],
+      "uplift_cap": 0.5,
+      "uplift_quarter_step": 0.05,
+      "stretch_default": 0.12,
+      "stretch_range": [
+        0.1,
+        0.15
+      ],
+      "stretch_cap": 0.2,
+      "stretch_quarter_step": 0.03
+    },
+    "E": {
+      "name": "工程仓储军需后勤",
+      "real_growth_default": 0.1,
+      "real_growth_range": [
+        0.05,
+        0.15
+      ],
+      "real_growth_cap": 0.2,
+      "execution_default": 0.75,
+      "execution_range": [
+        0.6,
+        0.9
+      ],
+      "uplift_default": 0.2,
+      "uplift_range": [
+        0.15,
+        0.25
+      ],
+      "uplift_cap": 0.3,
+      "uplift_quarter_step": 0.05,
+      "stretch_default": 0.12,
+      "stretch_range": [
+        0.1,
+        0.15
+      ],
+      "stretch_cap": 0.2,
+      "stretch_quarter_step": 0.03
+    },
+    "F": {
+      "name": "新制度第一季度即时起效",
+      "execution_default": 0.55,
+      "execution_range": [
+        0.45,
+        0.7
+      ],
+      "annual_assessment_required": true,
+      "first_quarter_effect_required": true,
+      "first_quarter_annual_target_share_default": 0.25,
+      "first_quarter_annual_target_share_range": [
+        0.2,
+        0.35
+      ],
+      "first_quarter_annual_target_share_cap": 0.4,
+      "uplift_default": 0.1,
+      "uplift_range": [
+        0.05,
+        0.15
+      ],
+      "uplift_cap": 0.2,
+      "stretch_default": 0.1,
+      "stretch_range": [
+        0.05,
+        0.15
+      ],
+      "stretch_cap": 0.2,
+      "assessment_weights": {
+        "institution_setup": 0.35,
+        "direct_output": 0.4,
+        "system_outcome": 0.25
+      }
+    },
+    "G": {
+      "name": "成熟制度运行",
+      "real_growth_default": 0.05,
+      "real_growth_range": [
+        0.03,
+        0.08
+      ],
+      "real_growth_cap": 0.1,
+      "execution_default": 0.78,
+      "execution_range": [
+        0.65,
+        0.9
+      ],
+      "uplift_default": 0.12,
+      "uplift_range": [
+        0.08,
+        0.18
+      ],
+      "uplift_cap": 0.25,
+      "uplift_quarter_step": 0.03,
+      "stretch_default": 0.08,
+      "stretch_range": [
+        0.05,
+        0.1
+      ],
+      "stretch_cap": 0.15,
+      "stretch_quarter_step": 0.02
+    },
+    "H": {
+      "name": "情报预警",
+      "real_growth_default": 0.05,
+      "real_growth_range": [
+        0.0,
+        0.08
+      ],
+      "real_growth_cap": 0.1,
+      "accuracy_point_default": 2,
+      "accuracy_point_cap": 4,
+      "execution_default": 0.65,
+      "execution_range": [
+        0.5,
+        0.8
+      ],
+      "uplift_default": 0.08,
+      "uplift_range": [
+        0.0,
+        0.1
+      ],
+      "uplift_cap": 0.15,
+      "uplift_quarter_step": 0.03,
+      "stretch_default": 0.08,
+      "stretch_range": [
+        0.05,
+        0.1
+      ],
+      "stretch_cap": 0.12,
+      "accuracy_stretch_points": [
+        1,
+        2
+      ],
+      "accuracy_stretch_cap_points": 3
+    },
+    "I": {
+      "name": "外交互市海贸技术输入",
+      "real_growth_default": 0.06,
+      "real_growth_range": [
+        0.03,
+        0.1
+      ],
+      "real_growth_cap": 0.15,
+      "execution_default": 0.65,
+      "execution_range": [
+        0.5,
+        0.8
+      ],
+      "uplift_default": 0.2,
+      "uplift_range": [
+        0.15,
+        0.25
+      ],
+      "uplift_cap": 0.3,
+      "uplift_quarter_step": 0.05,
+      "stretch_default": 0.12,
+      "stretch_range": [
+        0.1,
+        0.15
+      ],
+      "stretch_cap": 0.2,
+      "stretch_quarter_step": 0.03
+    },
+    "J": {
+      "name": "存量编制固定常额",
+      "real_growth_default": 0.01,
+      "real_growth_range": [
+        0.0,
+        0.02
+      ],
+      "real_growth_cap": 0.05,
+      "execution_default": 0.9,
+      "execution_range": [
+        0.8,
+        1.0
+      ],
+      "uplift_default": 0.0,
+      "uplift_range": [
+        0.0,
+        0.03
+      ],
+      "uplift_cap": 0.05,
+      "uplift_quarter_step": 0.01,
+      "stretch_default": 0.01,
+      "stretch_range": [
+        0.0,
+        0.02
+      ],
+      "stretch_cap": 0.03,
+      "stretch_quarter_step": 0.01,
+      "troop_establishment_default_range": [
+        0.0,
+        0.02
+      ],
+      "troop_establishment_hard_cap": 0.05,
+      "troop_establishment_combined_target_hard_cap": 0.05,
+      "recurring_appropriation_default_change": 0.0,
+      "recurring_appropriation_normal_cap": 0.03,
+      "recurring_appropriation_hard_cap": 0.05,
+      "recurring_appropriation_combined_target_hard_cap": 0.05,
+      "standing_institution_default_change": 0.0,
+      "standing_institution_hard_cap": 0.05
+    },
+    "K": {
+      "name": "系统结果与传导效果",
+      "mode": "dual_layer_leading_and_actual_outcome",
+      "first_quarter_actual_outcome_required": true,
+      "first_quarter_positive_point_default": 1,
+      "first_quarter_positive_point_range": [
+        1,
+        2
+      ],
+      "first_quarter_positive_point_stretch": 3,
+      "first_quarter_positive_point_exception_cap": 5,
+      "first_quarter_negative_point_default": -1,
+      "first_quarter_negative_point_range": [
+        -2,
+        -1
+      ],
+      "first_quarter_negative_point_stretch": -3,
+      "first_quarter_negative_point_exception_cap": -5,
+      "annual_positive_point_default": 5,
+      "annual_positive_point_range": [
+        4,
+        6
+      ],
+      "annual_positive_point_stretch": 8,
+      "annual_positive_point_cap": 10,
+      "annual_corruption_reduction_default": 5,
+      "annual_corruption_reduction_range": [
+        4,
+        6
+      ],
+      "annual_corruption_reduction_stretch": 8,
+      "annual_corruption_reduction_cap": 10,
+      "two_quarters_without_outcome_triggers_review": true
+    },
+    "L": {
+      "name": "阈值零容忍",
+      "mode": "maintain_threshold_and_increase_resilience",
+      "default_threshold": 0
+    }
+  },
+  "institution_lifecycle": {
+    "annual_assessment_required": true,
+    "annual_quarters": 4,
+    "default_quarterly_cumulative_path": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "first_quarter_effect_required": true,
+    "first_quarter_minimum_annual_share": 0.2,
+    "first_quarter_default_annual_share": 0.25,
+    "first_quarter_maximum_annual_share": 0.4,
+    "temporary_institution_default_years": 3,
+    "temporary_institution_default_quarters": 12,
+    "annual_review_interval_quarters": 4,
+    "sunset_review_required": true,
+    "automatic_renewal": false,
+    "renewal_max_years": 3,
+    "regular_office_priority": true,
+    "temporary_roles_should_be_concurrent": true,
+    "sunset_options": [
+      "abolish",
+      "merge_into_regular_office",
+      "reduce_to_regular_suboffice",
+      "renew_for_three_years"
+    ]
+  },
+  "modifiers": {
+    "focus": {
+      "main": 1.15,
+      "support": 1.0,
+      "maintenance": 0.85,
+      "extra": 0.7
+    },
+    "authority": [
+      {
+        "min": 0,
+        "max": 39,
+        "factor": 0.85
+      },
+      {
+        "min": 40,
+        "max": 59,
+        "factor": 0.95
+      },
+      {
+        "min": 60,
+        "max": 74,
+        "factor": 1.05
+      },
+      {
+        "min": 75,
+        "max": 100,
+        "factor": 1.1
+      }
+    ],
+    "satisfaction": [
+      {
+        "min": 0,
+        "max": 19,
+        "factor": 0.75
+      },
+      {
+        "min": 20,
+        "max": 34,
+        "factor": 0.88
+      },
+      {
+        "min": 35,
+        "max": 49,
+        "factor": 0.97
+      },
+      {
+        "min": 50,
+        "max": 69,
+        "factor": 1.03
+      },
+      {
+        "min": 70,
+        "max": 100,
+        "factor": 1.08
+      }
+    ],
+    "corruption": [
+      {
+        "min": 0,
+        "max": 25,
+        "factor": 1.05
+      },
+      {
+        "min": 26,
+        "max": 40,
+        "factor": 1.0
+      },
+      {
+        "min": 41,
+        "max": 60,
+        "factor": 0.9
+      },
+      {
+        "min": 61,
+        "max": 80,
+        "factor": 0.78
+      },
+      {
+        "min": 81,
+        "max": 100,
+        "factor": 0.65
+      }
+    ],
+    "resources": {
+      "severe_shortage": 0.7,
+      "partial": 0.85,
+      "adequate": 1.0,
+      "earmarked_early": 1.05
+    },
+    "maturity": {
+      "first_quarter": 0.8,
+      "one_to_two_quarters": 0.92,
+      "three_plus_quarters": 1.0,
+      "continuous_success": 1.05
+    },
+    "shock": {
+      "war_and_disaster": 0.7,
+      "major_single": 0.85,
+      "minor": 0.95,
+      "stable": 1.0
+    },
+    "coordination": {
+      "severe_conflict": 0.8,
+      "multi_department_delay": 0.9,
+      "clear": 1.0,
+      "mature": 1.05
+    }
+  },
+  "quarterly_update": {
+    "old_weight": 0.7,
+    "recent_comparable_median_weight": 0.3,
+    "window": 4,
+    "ordinary_max_change": 0.05,
+    "two_consecutive_same_direction_max_change": 0.08,
+    "annual_or_structural_max_change": 0.1,
+    "extreme_single_event_max_change": 0.03,
+    "exclude_extreme_shock_by_default": true
+  },
+  "completion_bands": [
+    {
+      "min": 1.1,
+      "next_growth": "upper_half"
+    },
+    {
+      "min": 0.95,
+      "max": 1.099999,
+      "next_growth": "default"
+    },
+    {
+      "min": 0.8,
+      "max": 0.949999,
+      "next_growth": "lower_half_or_hold"
+    },
+    {
+      "min": 0.6,
+      "max": 0.799999,
+      "next_growth": "pause_and_repair"
+    },
+    {
+      "min": 0.0,
+      "max": 0.599999,
+      "next_growth": "no_uplift_change_method_or_owner"
+    }
+  ],
+  "workload_limit": {
+    "decisive_main": 1,
+    "hard_support": 2,
+    "maintenance": 3,
+    "max_core_metrics_per_task": 3,
+    "extra_task_focus_factor": 0.7
+  }
+}

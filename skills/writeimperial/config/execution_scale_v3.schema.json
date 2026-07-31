@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "writeimperial execution scale v3.1",
+  "type": "object",
+  "required": [
+    "version",
+    "coefficient_bounds",
+    "task_types",
+    "institution_lifecycle",
+    "modifiers",
+    "quarterly_update",
+    "completion_bands",
+    "workload_limit"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "3.1"
+    },
+    "description": {
+      "type": "string"
+    },
+    "coefficient_bounds": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "number",
+          "maximum": 2.0
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "task_types": {
+      "type": "object",
+      "required": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ],
+      "properties": {
+        "F": {
+          "type": "object",
+          "required": [
+            "name",
+            "execution_default",
+            "execution_range",
+            "annual_assessment_required",
+            "first_quarter_effect_required",
+            "first_quarter_annual_target_share_default",
+            "first_quarter_annual_target_share_range",
+            "first_quarter_annual_target_share_cap",
+            "uplift_default",
+            "uplift_range",
+            "uplift_cap",
+            "stretch_default",
+            "stretch_range",
+            "stretch_cap",
+            "assessment_weights"
+          ],
+          "properties": {
+            "name": {
+              "const": "新制度第一季度即时起效"
+            },
+            "annual_assessment_required": {
+              "type": "boolean",
+              "const": true
+            },
+            "first_quarter_effect_required": {
+              "type": "boolean",
+              "const": true
+            },
+            "first_quarter_annual_target_share_default": {
+              "type": "number",
+              "minimum": 0.2,
+              "maximum": 0.35
+            },
+            "first_quarter_annual_target_share_range": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number",
+                  "minimum": 0.2
+                },
+                {
+                  "type": "number",
+                  "maximum": 0.35
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "first_quarter_annual_target_share_cap": {
+              "type": "number",
+              "maximum": 0.4
+            },
+            "assessment_weights": {
+              "type": "object",
+              "required": [
+                "institution_setup",
+                "direct_output",
+                "system_outcome"
+              ],
+              "properties": {
+                "institution_setup": {
+                  "type": "number",
+                  "const": 0.35
+                },
+                "direct_output": {
+                  "type": "number",
+                  "const": 0.4
+                },
+                "system_outcome": {
+                  "type": "number",
+                  "const": 0.25
+                }
+              }
+            }
+          }
+        },
+        "J": {
+          "type": "object",
+          "required": [
+            "real_growth_range",
+            "real_growth_cap",
+            "troop_establishment_default_range",
+            "troop_establishment_hard_cap",
+            "troop_establishment_combined_target_hard_cap",
+            "recurring_appropriation_default_change",
+            "recurring_appropriation_normal_cap",
+            "recurring_appropriation_hard_cap",
+            "recurring_appropriation_combined_target_hard_cap",
+            "standing_institution_default_change",
+            "standing_institution_hard_cap"
+          ],
+          "properties": {
+            "real_growth_range": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 0.02
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "real_growth_cap": {
+              "type": "number",
+              "const": 0.05
+            },
+            "troop_establishment_default_range": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number",
+                  "const": 0.0
+                },
+                {
+                  "type": "number",
+                  "const": 0.02
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "troop_establishment_hard_cap": {
+              "type": "number",
+              "const": 0.05
+            },
+            "troop_establishment_combined_target_hard_cap": {
+              "type": "number",
+              "const": 0.05
+            },
+            "recurring_appropriation_default_change": {
+              "type": "number",
+              "const": 0.0
+            },
+            "recurring_appropriation_normal_cap": {
+              "type": "number",
+              "maximum": 0.03
+            },
+            "recurring_appropriation_hard_cap": {
+              "type": "number",
+              "const": 0.05
+            },
+            "recurring_appropriation_combined_target_hard_cap": {
+              "type": "number",
+              "const": 0.05
+            },
+            "standing_institution_default_change": {
+              "type": "number",
+              "const": 0.0
+            },
+            "standing_institution_hard_cap": {
+              "type": "number",
+              "const": 0.05
+            }
+          }
+        },
+        "K": {
+          "type": "object",
+          "required": [
+            "name",
+            "mode",
+            "first_quarter_actual_outcome_required",
+            "first_quarter_positive_point_default",
+            "first_quarter_positive_point_range",
+            "first_quarter_positive_point_stretch",
+            "first_quarter_positive_point_exception_cap",
+            "first_quarter_negative_point_default",
+            "first_quarter_negative_point_range",
+            "first_quarter_negative_point_stretch",
+            "first_quarter_negative_point_exception_cap",
+            "annual_positive_point_default",
+            "annual_positive_point_range",
+            "annual_positive_point_stretch",
+            "annual_positive_point_cap",
+            "annual_corruption_reduction_default",
+            "annual_corruption_reduction_range",
+            "annual_corruption_reduction_stretch",
+            "annual_corruption_reduction_cap",
+            "two_quarters_without_outcome_triggers_review"
+          ],
+          "properties": {
+            "mode": {
+              "const": "dual_layer_leading_and_actual_outcome"
+            },
+            "first_quarter_actual_outcome_required": {
+              "type": "boolean",
+              "const": true
+            },
+            "two_quarters_without_outcome_triggers_review": {
+              "type": "boolean",
+              "const": true
+            }
+          }
+        }
+      },
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "institution_lifecycle": {
+      "type": "object",
+      "required": [
+        "annual_assessment_required",
+        "annual_quarters",
+        "default_quarterly_cumulative_path",
+        "first_quarter_effect_required",
+        "first_quarter_minimum_annual_share",
+        "first_quarter_default_annual_share",
+        "first_quarter_maximum_annual_share",
+        "temporary_institution_default_years",
+        "temporary_institution_default_quarters",
+        "annual_review_interval_quarters",
+        "sunset_review_required",
+        "automatic_renewal",
+        "renewal_max_years",
+        "regular_office_priority",
+        "temporary_roles_should_be_concurrent",
+        "sunset_options"
+      ],
+      "properties": {
+        "annual_assessment_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "annual_quarters": {
+          "type": "integer",
+          "const": 4
+        },
+        "default_quarterly_cumulative_path": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "number",
+              "const": 1
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "temporary_institution_default_years": {
+          "type": "integer",
+          "const": 3
+        },
+        "temporary_institution_default_quarters": {
+          "type": "integer",
+          "const": 12,
+          "default": 12
+        },
+        "annual_review_interval_quarters": {
+          "type": "integer",
+          "const": 4
+        },
+        "automatic_renewal": {
+          "type": "boolean",
+          "const": false,
+          "default": false
+        },
+        "sunset_options": {
+          "type": "array",
+          "minItems": 4,
+          "contains": {
+            "const": "renew_for_three_years"
+          }
+        }
+      }
+    },
+    "modifiers": {
+      "type": "object"
+    },
+    "quarterly_update": {
+      "type": "object",
+      "required": [
+        "old_weight",
+        "recent_comparable_median_weight",
+        "window",
+        "ordinary_max_change",
+        "two_consecutive_same_direction_max_change",
+        "annual_or_structural_max_change",
+        "extreme_single_event_max_change",
+        "exclude_extreme_shock_by_default"
+      ],
+      "properties": {
+        "old_weight": {
+          "type": "number",
+          "const": 0.7
+        },
+        "recent_comparable_median_weight": {
+          "type": "number",
+          "const": 0.3
+        },
+        "window": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ordinary_max_change": {
+          "type": "number",
+          "const": 0.05
+        },
+        "two_consecutive_same_direction_max_change": {
+          "type": "number",
+          "const": 0.08
+        },
+        "annual_or_structural_max_change": {
+          "type": "number",
+          "const": 0.1
+        },
+        "extreme_single_event_max_change": {
+          "type": "number",
+          "const": 0.03
+        },
+        "exclude_extreme_shock_by_default": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "completion_bands": {
+      "type": "array",
+      "minItems": 5
+    },
+    "workload_limit": {
+      "type": "object",
+      "required": [
+        "decisive_main",
+        "hard_support",
+        "maintenance",
+        "max_core_metrics_per_task",
+        "extra_task_focus_factor"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

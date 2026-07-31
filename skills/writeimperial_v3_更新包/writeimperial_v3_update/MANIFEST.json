@@ -1,0 +1,67 @@
+[
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 887,
+    "sha256": "9501c6e7eac043ea9e13d049ec85f6408d9c169e4df8677a8d500047d00794f9"
+  },
+  {
+    "path": "README.md",
+    "bytes": 2266,
+    "sha256": "ba610253692c4f08ef37ab7a7401101d651ef595292931976845ed5c5fe2b73c"
+  },
+  {
+    "path": "baseline_snapshot/skills/writeimperial/SKILL.md",
+    "bytes": 4030,
+    "sha256": "b64e0e5352088636371d1a60a6c5bce6a4c92e6b05dacf22d2903931108e2aa3"
+  },
+  {
+    "path": "baseline_snapshot/skills/writeimperial/references/edict_rules.md",
+    "bytes": 2972,
+    "sha256": "6b77e18a7a12d660c0f3bf31d93746591ad464ecb4ddcf7d44613d9af078209d"
+  },
+  {
+    "path": "patch/writeimperial_scale_v3.diff",
+    "bytes": 22496,
+    "sha256": "70218459aa52756a3066ba21772f293fd7b7616a8ab8d107ac54028e51e574a3"
+  },
+  {
+    "path": "replacement/skills/writeimperial/SKILL.md",
+    "bytes": 8317,
+    "sha256": "953768f4370c78c638d2cbd4f1494010bddb068446187f5472eff77b2d7d1222"
+  },
+  {
+    "path": "replacement/skills/writeimperial/config/execution_scale_v3.json",
+    "bytes": 9527,
+    "sha256": "7a6f7efc8a800125d2a46b9fc20d4aca430c13d8d26da6214e1dc9c06ff7c2f4"
+  },
+  {
+    "path": "replacement/skills/writeimperial/config/execution_scale_v3.schema.json",
+    "bytes": 1252,
+    "sha256": "523f6d9d5f5a9d4b2b849caff3fa1e14b9d79b51fd600dfc50f00f12d66293af"
+  },
+  {
+    "path": "replacement/skills/writeimperial/references/edict_rules.md",
+    "bytes": 7662,
+    "sha256": "65624e7c83f77d158ca3e0f92c517b75071b69427a18d06f18d4a479f66b65bd"
+  },
+  {
+    "path": "replacement/skills/writeimperial/references/target_scale_v3.md",
+    "bytes": 17329,
+    "sha256": "42011d8d58b9beb486c4197802fdb3b5a7a2ac750abd3c3c59d572cd489ec06e"
+  },
+  {
+    "path": "replacement/skills/writeimperial/templates/quarterly_scale_feedback.json",
+    "bytes": 1147,
+    "sha256": "ac23e8864227f78f7134323a466f9222f6d4dd6902f537814e55e314ebb44e5f"
+  },
+  {
+    "path": "replacement/skills/writeimperial/tests/scale_examples.md",
+    "bytes": 1677,
+    "sha256": "b0df77504d9da9d67f123d1fc84b9a03ecd96a68c9abc8eb2df7811a040399f8"
+  },
+  {
+    "path": "给ChatGPT的修改指令.txt",
+    "bytes": 1935,
+    "sha256": "6ef6ac2e1dffd7802b030e54edb256117af732b4ed78d04d1778563dadee4ade"
+  }
+]

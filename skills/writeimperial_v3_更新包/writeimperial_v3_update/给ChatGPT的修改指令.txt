@@ -1,0 +1,50 @@
+请帮我修改本地项目中的 writeimperial skill。
+
+目标目录：
+E:\AIS\AI任务执行清单\0730\崇祯模拟器辅助管理系统\skills\writeimperial
+
+我上传了：
+1. 本地当前 writeimperial 文件夹或压缩包；
+2. writeimperial Scale v3 更新包。
+
+请按以下顺序执行：
+
+1. 先完整读取本地当前版本，不要假设它与 baseline_snapshot 完全一致。
+2. 对比更新包中的：
+   - baseline_snapshot
+   - replacement
+   - patch
+3. 以本地当前版本为主，保留本地已有但更新包中没有的新规则。
+4. 合并 replacement 中关于 Scale v3 的改动：
+   - 更新 SKILL.md；
+   - 更新 references/edict_rules.md；
+   - 新增 references/target_scale_v3.md；
+   - 新增 config/execution_scale_v3.json；
+   - 新增 config/execution_scale_v3.schema.json；
+   - 新增 templates/quarterly_scale_feedback.json；
+   - 新增 tests/scale_examples.md。
+5. 删除旧版统一“底线+30%、上考+50%”的强制默认规则，替换为按任务类型计算。
+6. 强制区分：
+   - 实际基线；
+   - 御前实得目标；
+   - 预计执行系数；
+   - 诏书底线；
+   - 上考；
+   - 失败线。
+7. 兵额、固定赏银和常设机构默认不大幅变动：
+   - 兵额每季默认0%–2%，硬上限5%；
+   - 固定赏银默认不变，硬调整上限±5%。
+8. 每季度执行系数更新：
+   - 普通最多±0.05；
+   - 连续2季同方向最多±0.08；
+   - 年度或结构变化最多±0.10；
+   - 单次极端事件最多±0.03或排除。
+9. 校验 execution_scale_v3.json 是合法 JSON，并尽量按 schema 检查。
+10. 用 tests/scale_examples.md 中至少6个案例检查规则。
+11. 不要修改诏书全集、朝政纪要、国家档案或 data 目录。
+12. 最后输出：
+   - 修改文件清单；
+   - 关键差异；
+   - JSON验证结果；
+   - 测试结果；
+   - 如有本地规则冲突，列出冲突和采用理由。
