@@ -30,7 +30,9 @@
   "下一季执行计划": "data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json",
   "下一季军械面板": "data/military/CZ11-WINTER-THREE-ARMIES-EQUIPMENT-1.json",
   "下一季建筑面板": "data/infrastructure/CZ11-WINTER-INFRASTRUCTURE-PANEL-1.json",
+  "下一季四社面板": "data/companies/CZ11-WINTER-FOUR-CORPORATIONS-1.json",
+  "下一季省级面板": "data/province_panels/CZ11-WINTER-PROVINCES-1.json",
   "下一季状态": "已拟诏待游戏执行",
-  "面板失败铁律": "任一兵械炮马厂仓港渠税民心变化未同步国家总面板、军团面板、军械面板、建筑面板和省级面板，相关任务一律失败。",
+  "面板失败铁律": "任一兵械炮马厂仓港渠税民心变化未同步国家总面板、军团面板、军械面板、建筑面板、四社面板和省级面板，相关任务一律失败。",
   "合并规则": "秋季执行纪要覆盖秋季计划；御前五基作为冬季已确认执行条件；冬季兵力、军械到营、火炮产量、建筑完工、收益和面板更新仍属待执行，不得提前写成成果。"
 }
