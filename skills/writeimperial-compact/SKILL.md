@@ -12,6 +12,8 @@ This skill distinguishes two different writing units:
 - **诏书**：一个季度的完整御令文件，固定由 `【军事】【内政】【外交】【其他】` 四大部分组成。
 - **政令**：诏书某一部分内部的执行单元，一条政令只处理一件事，通常为一个编号段落。
 
+Before compacting a current-quarter draft, read `data/quarterly_workflows.json` and the matching `季度闭环工作单.md` when present. A four-section draft is L1 material; it becomes a formal L2 edict only after the player explicitly confirms and submits it.
+
 Use `$writeimperial-causal-ledger` before compression when a directive contains a multi-stage quantitative project, revenue claim, production chain, cost deduction, allocation, or panel result. Compact wording may shorten explanations, but it must preserve the ledger's actual baseline, critical conversion factors, total cost, failure line, and evidence requirement.
 
 An edict is not a pile of independent mini-edicts. The full document uses `奉天承运皇帝，诏曰：` once at the beginning and `钦此。` once at the end. Individual directives inside the four sections do not repeat either formula.

@@ -29,10 +29,14 @@ Before drafting, read the newest:
 - `战略方针/README.md` 与相关专项 `战略方略`
 - `朝臣档案`
 - `密谈记录`
+- `data/quarterly_workflows.json` 与对应季度工作台内的 `季度闭环工作单.md`
+- `大明档案/00_总览/AI协作与季度闭环操作手册.md`
 - relevant `data/*.json`
 - any user screenshots or pasted game feedback
 
 Use the newest measured actual result as the baseline. Do not use the previous edict target as the new baseline.
+
+If the target quarter has a quarterly workflow record, preserve its stage boundary: use its L3 feedback source for facts, use its L1 consultation and four-section draft as input, and only treat its L2 edict field as submitted when `玩家确认已下诏=true`. Do not skip the player-confirmation gate or write a missing future chronicle as an outcome.
 
 If sources conflict:
 
