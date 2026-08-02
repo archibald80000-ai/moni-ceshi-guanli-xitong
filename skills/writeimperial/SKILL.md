@@ -13,6 +13,8 @@ Use this skill to produce actionable 崇祯 simulator strategy and诏书 from th
 
 Never use a universal `+30%` bottom-line and `+50%` upper-target rule. Different task types have different growth rates, execution loss, uplift caps, and quarterly correction limits.
 
+For projects whose result depends on a long quantitative chain—such as imperial estates, agriculture, mining, military industry, trade, banks, waterworks, logistics, relief, or large construction—also use sibling `$writeimperial-causal-ledger`. Calculate a Scale v3.1 target here first, then require that skill to prove the full resource, input, output, cost, distribution, and panel-update chain. A causal-ledger projection remains a policy target until later game feedback confirms it.
+
 ## Core Workflow
 
 ### 1. Ground in the latest archive
@@ -22,7 +24,9 @@ Before drafting, read the newest:
 - `朝政纪要`
 - previous-quarter edict
 - `国家态势` / `game_state`
-- `国策路线`
+- `制度规则/关键制度源头/01_长期国策有效清单.md`
+- `制度规则/关键制度源头/02_季度试行与非永久政策清单.md`
+- `战略方针/README.md` 与相关专项 `战略方略`
 - `朝臣档案`
 - `密谈记录`
 - relevant `data/*.json`

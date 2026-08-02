@@ -25,6 +25,11 @@ from urllib.parse import parse_qs, quote, unquote, urlparse
 
 from modules.database import JSONDatabase
 from modules.knowledge_base import MarkdownKnowledgeBase
+from modules.quarterly_workflow import (
+    normalize_workflow,
+    readiness as workflow_readiness,
+    write_workflow_markdown,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -190,14 +195,14 @@ def read_upload_index() -> list[dict[str, Any]]:
 
 def write_upload_catalog(uploads: list[dict[str, Any]]) -> Path:
     """按时间节点生成可阅读的上传资料目录，不读取文件正文。"""
-    catalog_path = PROJECT_ROOT / "大明档案" / "资料索引" / "上传资料目录.md"
+    catalog_path = PROJECT_ROOT / "大明档案" / "04_辅助资料" / "上传资料索引.md"
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in uploads:
         timeline = str(item.get("时间节点", "")).strip() or "时间节点未标注"
         grouped.setdefault(timeline, []).append(item)
 
     lines = [
-        "# 上传资料目录",
+        "# 上传资料索引",
         "",
         "本目录依据上传元数据生成，只记录文件分类和时间节点，不分析正文。",
     ]
@@ -286,6 +291,18 @@ def normalize_personal_note(raw: dict[str, Any]) -> dict[str, str]:
 
 
 def flatten_intelligence(data: dict[str, Any]) -> list[dict[str, Any]]:
+    """兼容早期“单元素列表包裹分类对象”的情报存档。"""
+    if isinstance(data, list):
+        merged: dict[str, list[Any]] = {}
+        for group in data:
+            if not isinstance(group, dict):
+                continue
+            for category, items in group.items():
+                if isinstance(items, list):
+                    merged.setdefault(category, []).extend(items)
+        data = merged
+    if not isinstance(data, dict):
+        return []
     records: list[dict[str, Any]] = []
     for category, items in data.items():
         if not isinstance(items, list):
@@ -398,6 +415,7 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
 
     def _archive_snapshot(self) -> dict[str, Any]:
         db = self.server.database
+        workflows = db.load("quarterly_workflows.json")
         return {
             "history": db.load("history_records.json"),
             "personnel": db.load("personnel.json"),
@@ -409,6 +427,10 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
                 db.load("intelligence.json")
             ),
             "uploads": read_upload_index(),
+            "quarterly_workflows": [
+                {**workflow, "待补提示": workflow_readiness(workflow)}
+                for workflow in workflows
+            ],
             "schemas": {
                 key: {
                     "fields": value["fields"],
@@ -465,6 +487,9 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
             if parsed.path == "/api/personal-notes":
                 self._save_personal_note(payload)
                 return
+            if parsed.path == "/api/quarterly-workflows":
+                self._create_quarterly_workflow(payload)
+                return
             if parsed.path == "/api/sync-markdown":
                 with self.server.data_lock:
                     root = self.server.knowledge_base.sync_all()
@@ -481,6 +506,15 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
             self._send_error_json("拒绝非本地页面的写入请求。", HTTPStatus.FORBIDDEN)
             return
         parsed = urlparse(self.path)
+        workflow_match = re.fullmatch(r"/api/quarterly-workflows/([^/]+)", parsed.path)
+        if workflow_match:
+            try:
+                self._update_quarterly_workflow(unquote(workflow_match.group(1)), self._read_json_body())
+            except ValueError as error:
+                self._send_error_json(str(error), HTTPStatus.BAD_REQUEST)
+            except OSError as error:
+                self._send_error_json(f"保存失败：{error}", HTTPStatus.INTERNAL_SERVER_ERROR)
+            return
         match = re.fullmatch(r"/api/records/([a-z]+)/(\d+)", parsed.path)
         if not match:
             self._send_error_json("接口不存在。", HTTPStatus.NOT_FOUND)
@@ -536,6 +570,17 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
         with self.server.data_lock:
             if dataset == "intelligence":
                 intelligence = self.server.database.load("intelligence.json")
+                if isinstance(intelligence, list):
+                    normalized: dict[str, list[Any]] = {}
+                    for group in intelligence:
+                        if not isinstance(group, dict):
+                            continue
+                        for group_category, values in group.items():
+                            if isinstance(values, list):
+                                normalized.setdefault(group_category, []).extend(values)
+                    intelligence = normalized
+                if not isinstance(intelligence, dict):
+                    raise ValueError("情报档案结构无效。")
                 source_category = category or record["分类"]
                 if source_category not in intelligence:
                     raise ValueError("原情报分类不存在。")
@@ -561,6 +606,49 @@ class ArchiveRequestHandler(BaseHTTPRequestHandler):
                 self.server.database.save(definition["filename"], records)
             self.server.knowledge_base.sync_all()
         self._send_json({"ok": True, "message": "档案已更新。"})
+
+    def _create_quarterly_workflow(self, payload: dict[str, Any]) -> None:
+        workflow = normalize_workflow(payload)
+        with self.server.data_lock:
+            records = self.server.database.load("quarterly_workflows.json")
+            if any(item.get("工作单编号") == workflow["工作单编号"] for item in records):
+                raise ValueError("季度工作单编号已存在，请改用修改保存。")
+            records.append(workflow)
+            self.server.database.save("quarterly_workflows.json", records)
+            path = write_workflow_markdown(PROJECT_ROOT / "大明档案", workflow)
+        self._send_json(
+            {
+                "ok": True,
+                "message": "季度闭环工作单已保存。",
+                "item": {**workflow, "待补提示": workflow_readiness(workflow)},
+                "path": str(path),
+            },
+            HTTPStatus.CREATED,
+        )
+
+    def _update_quarterly_workflow(self, workflow_id: str, payload: dict[str, Any]) -> None:
+        with self.server.data_lock:
+            records = self.server.database.load("quarterly_workflows.json")
+            index = next(
+                (i for i, item in enumerate(records) if item.get("工作单编号") == workflow_id),
+                None,
+            )
+            if index is None:
+                raise ValueError("季度工作单不存在。")
+            workflow = normalize_workflow(payload, records[index])
+            if workflow["工作单编号"] != workflow_id:
+                raise ValueError("季度工作单编号不能修改。")
+            records[index] = workflow
+            self.server.database.save("quarterly_workflows.json", records)
+            path = write_workflow_markdown(PROJECT_ROOT / "大明档案", workflow)
+        self._send_json(
+            {
+                "ok": True,
+                "message": "季度闭环工作单已更新。",
+                "item": {**workflow, "待补提示": workflow_readiness(workflow)},
+                "path": str(path),
+            }
+        )
 
     def _save_upload(self, payload: dict[str, Any]) -> None:
         original_name = Path(str(payload.get("filename", ""))).name.strip()

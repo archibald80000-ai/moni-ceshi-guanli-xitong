@@ -17,6 +17,7 @@ DEFAULT_DATA: dict[str, Any] = {
     "edicts.json": [],
     "strategy.json": [],
     "personal_notes.json": [],
+    "quarterly_workflows.json": [],
     "game_state.json": {
         "阶层": [],
         "田税": [],
@@ -137,6 +138,18 @@ class JSONDatabase:
 
     def add_intelligence(self, category: str, item: dict[str, Any]) -> None:
         intelligence = self.load("intelligence.json")
+        # 兼容早期版本把分类对象包在单元素列表中的结构；首次写入时归一化。
+        if isinstance(intelligence, list):
+            normalized: dict[str, list[Any]] = {}
+            for group in intelligence:
+                if not isinstance(group, dict):
+                    continue
+                for group_category, values in group.items():
+                    if isinstance(values, list):
+                        normalized.setdefault(group_category, []).extend(values)
+            intelligence = normalized
+        if not isinstance(intelligence, dict):
+            raise ValueError("intelligence.json 必须是分类对象或兼容列表。")
         if category not in intelligence:
             intelligence[category] = []
         intelligence[category].append(

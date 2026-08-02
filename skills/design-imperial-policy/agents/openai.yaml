@@ -1,0 +1,4 @@
+interface:
+  display_name: "国策方案整理"
+  short_description: "区分历史执行、长期制度、跨季战略与新国策提案并规范归档"
+  default_prompt: "使用 $design-imperial-policy 整理一项新的国策方案，并按档案证据层级保存。"

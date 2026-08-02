@@ -31,6 +31,9 @@
           <button class="nav-item" type="button" data-view="entry">
             录入资料
           </button>
+          <button class="nav-item" type="button" data-view="quarterly">
+            季度闭环
+          </button>
           <button class="nav-item" type="button" data-view="records">
             查看与修改
           </button>
@@ -131,6 +134,10 @@
                   <span>录入个人想法</span>
                   <small>整段粘贴，由后续 AI 自行解析</small>
                 </button>
+                <button type="button" data-go="quarterly">
+                  <span>推进季度闭环</span>
+                  <small>密谈、草稿、诏书、反馈与回填分层留档</small>
+                </button>
               </div>
             </section>
 
@@ -145,6 +152,108 @@
           </div>
         </section>
 
+        <section id="view-quarterly" class="view" aria-labelledby="quarterly-title">
+          <div class="section-heading">
+            <h2 id="quarterly-title">季度闭环工作单</h2>
+            <p>按“上季反馈 → 密谈 → 可行性 → 四板块草稿 → 玩家确认下诏 → 下季纪要回填”保存材料。系统不自动生成、提交或认定游戏结果。</p>
+          </div>
+
+          <div class="workflow-toolbar">
+            <label>
+              <span>已存工作单</span>
+              <select id="quarterly-workflow-select">
+                <option value="">新建工作单</option>
+              </select>
+            </label>
+            <button id="quarterly-new" class="button button-secondary" type="button">新建工作单</button>
+            <button id="quarterly-copy-prompt" class="button button-secondary" type="button">复制协作 AI 提示词</button>
+          </div>
+
+          <div id="quarterly-readiness" class="workflow-readiness" aria-live="polite"></div>
+
+          <form id="quarterly-form" class="workflow-form" autocomplete="off">
+            <input id="quarterly-id" type="hidden">
+            <div class="field-grid">
+              <label>
+                <span>当前游戏时间 <span class="required">必填</span></span>
+                <input id="quarterly-game-time" type="text" placeholder="如：崇祯十二年春" required>
+              </label>
+              <label>
+                <span>工作状态</span>
+                <select id="quarterly-stage">
+                  <option>收集上季反馈</option>
+                  <option>密谈中</option>
+                  <option>可行性核验</option>
+                  <option>政令草稿</option>
+                  <option>待玩家确认</option>
+                  <option>已下诏</option>
+                  <option>执行中</option>
+                  <option>待下季反馈</option>
+                  <option>已结案</option>
+                </select>
+              </label>
+              <label class="is-wide">
+                <span>上季反馈来源（L3）</span>
+                <textarea id="quarterly-feedback-source" placeholder="粘贴朝政纪要路径、游戏报告原文或截图说明；没有反馈时保持为空。"></textarea>
+              </label>
+              <label class="is-wide">
+                <span>本季主轴</span>
+                <textarea id="quarterly-main-axis" placeholder="本季优先目标、约束和不做什么。"></textarea>
+              </label>
+              <label class="is-wide">
+                <span>本季问题</span>
+                <textarea id="quarterly-problems" placeholder="需要通过密谈和政令回应的具体问题。"></textarea>
+              </label>
+              <label class="is-wide">
+                <span>密谈大臣、问题、分歧与取舍（L1）</span>
+                <textarea id="quarterly-consultation" placeholder="记录谁参与密谈、提出哪些问题、可选路线和最终取舍。"></textarea>
+              </label>
+              <label class="is-wide">
+                <span>可行性核验（L1）</span>
+                <textarea id="quarterly-feasibility" placeholder="钱粮、人事、既有制度、时限、风险、依赖条件。"></textarea>
+              </label>
+            </div>
+
+            <section class="workflow-section">
+              <h2>四板块政令草稿（L1）</h2>
+              <p>每行一项政令草稿。草稿不是已下达的诏书。</p>
+              <div class="field-grid workflow-drafts">
+                <label><span>军事</span><textarea id="quarterly-draft-military" placeholder="每行一项军事政令"></textarea></label>
+                <label><span>内政</span><textarea id="quarterly-draft-civil" placeholder="每行一项内政政令"></textarea></label>
+                <label><span>外交</span><textarea id="quarterly-draft-diplomacy" placeholder="每行一项外交政令"></textarea></label>
+                <label><span>其他</span><textarea id="quarterly-draft-other" placeholder="每行一项其他政令"></textarea></label>
+              </div>
+            </section>
+
+            <section class="workflow-section">
+              <h2>正式诏书（L2）</h2>
+              <p>仅在你已确认文本并实际提交游戏后，勾选“玩家确认已下诏”。</p>
+              <div class="field-grid">
+                <label><span>正式诏书标题</span><input id="quarterly-edict-title" type="text" placeholder="玩家实际采用的标题"></label>
+                <label class="check-field"><input id="quarterly-edict-confirmed" type="checkbox"><span>玩家确认已下诏</span></label>
+                <label class="is-wide"><span>正式诏书正文</span><textarea id="quarterly-edict-body" placeholder="粘贴你最终提交给游戏的完整诏书，不要粘贴仅供讨论的草稿。"></textarea></label>
+                <label class="is-wide"><span>执行任务与验收</span><textarea id="quarterly-tasks" placeholder="需要下季核验的对象、指标、时限与来源。"></textarea></label>
+              </div>
+            </section>
+
+            <section class="workflow-section">
+              <h2>下季朝政纪要与数据回填（L3/L4）</h2>
+              <p>收到游戏反馈后再填写。计划、诏书和推演结果绝不混写。</p>
+              <div class="field-grid">
+                <label><span>下季朝政纪要标题</span><input id="quarterly-chronicle-title" type="text" placeholder="实际收到的季度纪要标题"></label>
+                <label class="check-field"><input id="quarterly-result-confirmed" type="checkbox"><span>玩家确认已收到反馈</span></label>
+                <label class="is-wide"><span>下季朝政纪要原文或摘录</span><textarea id="quarterly-chronicle-body" placeholder="粘贴游戏实际返回的纪要，或注明原件路径。"></textarea></label>
+                <label class="is-wide"><span>数据回填清单</span><textarea id="quarterly-backfill" placeholder="逐项列出要更新到哪些 JSON、朝臣/军队/地方档案与当前快照；仅填写已经被纪要确认的结果。"></textarea></label>
+              </div>
+            </section>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">保存季度工作单</button>
+              <p id="quarterly-status" class="form-status" aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
+
         <section id="view-entry" class="view" aria-labelledby="entry-title">
           <div class="section-heading">
             <h2 id="entry-title">录入资料</h2>
@@ -155,7 +264,7 @@
               <button type="button" class="is-active" data-dataset="history">季度记录</button>
               <button type="button" data-dataset="personnel">朝臣档案</button>
               <button type="button" data-dataset="edicts">诏书档案</button>
-              <button type="button" data-dataset="strategy">国策路线</button>
+              <button type="button" data-dataset="strategy">历史策略记录</button>
               <button type="button" data-dataset="intelligence">关键情报</button>
             </aside>
             <div class="form-panel">
@@ -176,7 +285,7 @@
                 <option value="history">季度记录</option>
                 <option value="personnel">朝臣档案</option>
                 <option value="edicts">诏书档案</option>
-                <option value="strategy">国策路线</option>
+                <option value="strategy">历史策略记录</option>
                 <option value="personal_notes">参谋笔记</option>
                 <option value="intelligence">关键情报</option>
               </select>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "诏书因果合同"
+  short_description: "用资源投入产出成本和面板结果建立可倒查的政令因果账本"
+  default_prompt: "使用 $writeimperial-causal-ledger 为这项政令建立完整、可倒查且不冒充实际结果的因果合同。"

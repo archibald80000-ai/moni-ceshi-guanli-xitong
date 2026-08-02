@@ -9,17 +9,13 @@ from typing import Any, Iterable
 from .database import JSONDatabase
 
 
-KNOWLEDGE_SECTIONS = (
-    "皇帝日志",
-    "朝臣档案",
-    "战争记录",
-    "财政报告",
-    "诏书全集",
-    "国策路线",
-    "国家态势",
-    "参谋笔记",
-    "资料索引",
-    "AI分析报告",
+ARCHIVE_ROOT_SECTIONS = (
+    "00_总览",
+    "01_季度政务",
+    "02_国家档案",
+    "03_国策与战略",
+    "04_辅助资料",
+    "99_原始资料",
 )
 
 
@@ -60,12 +56,42 @@ def _history_matches(
 
 
 def _table_section(title: str, records: Iterable[dict[str, Any]]) -> str:
-    records = list(records)
-    return f"## {title}\n\n" + _record_blocks(records, "名称")
+    if isinstance(records, dict):
+        normalized = [
+            {"名称": key, "数值": value} for key, value in records.items()
+        ]
+    else:
+        normalized = [record for record in records if isinstance(record, dict)]
+    return f"## {title}\n\n" + _record_blocks(normalized, "名称")
+
+
+def _intelligence_section(source: Any, section: str) -> list[dict[str, Any]]:
+    """兼容旧分类对象和后续追加的扁平情报数组。"""
+    collected: list[dict[str, Any]] = []
+    if isinstance(source, dict):
+        nested = source.get(section, [])
+        if isinstance(nested, list):
+            collected.extend(item for item in nested if isinstance(item, dict))
+        return collected
+
+    if not isinstance(source, list):
+        return collected
+
+    for record in source:
+        if not isinstance(record, dict):
+            continue
+        nested = record.get(section)
+        if isinstance(nested, list):
+            collected.extend(item for item in nested if isinstance(item, dict))
+            continue
+        labels = (record.get("分类"), record.get("地区"), record.get("区域"))
+        if any(section == str(label) for label in labels if label):
+            collected.append(record)
+    return collected
 
 
 class MarkdownKnowledgeBase:
-    """将当前 JSON 数据快照导出为七类 Markdown 档案。"""
+    """按六个一级入口将 JSON 快照导出为 Markdown 阅读稿。"""
 
     def __init__(
         self,
@@ -75,7 +101,7 @@ class MarkdownKnowledgeBase:
         self.database = database
         project_root = Path(__file__).resolve().parent.parent
         self.root_dir = Path(root_dir) if root_dir else project_root / "大明档案"
-        for section in KNOWLEDGE_SECTIONS:
+        for section in ARCHIVE_ROOT_SECTIONS:
             (self.root_dir / section).mkdir(parents=True, exist_ok=True)
 
     def sync_all(self) -> Path:
@@ -95,16 +121,19 @@ class MarkdownKnowledgeBase:
             "JSON 文件仍是结构化数据源；请在程序中修改后重新同步。",
             "",
         ]
-        for section in KNOWLEDGE_SECTIONS:
+        for section in ARCHIVE_ROOT_SECTIONS:
             index_lines.append(f"- [{section}](./{section}/)")
-        _write(self.root_dir / "README.md", "\n".join(index_lines))
+        # 根目录 README 是人工维护的档案入口，已有时不得被同步器覆盖。
+        readme_path = self.root_dir / "README.md"
+        if not readme_path.exists():
+            _write(readme_path, "\n".join(index_lines))
 
         _write(
-            self.root_dir / "皇帝日志" / "季度记录.md",
-            "# 皇帝日志\n\n" + _record_blocks(history, "时间"),
+            self.root_dir / "01_季度政务" / "季度记录汇总（系统生成）.md",
+            "# 季度记录汇总（系统生成）\n\n" + _record_blocks(history, "时间"),
         )
         _write(
-            self.root_dir / "朝臣档案" / "朝臣总档.md",
+            self.root_dir / "02_国家档案" / "01_朝臣" / "朝臣总档.md",
             "# 朝臣档案\n\n" + _record_blocks(personnel, "姓名"),
         )
 
@@ -113,45 +142,65 @@ class MarkdownKnowledgeBase:
             ("战", "军", "兵", "辽东", "边防", "叛乱", "流寇", "建虏"),
         )
         war_text = "# 战争记录\n\n" + _record_blocks(war_records, "时间")
-        if intelligence.get("辽东"):
+        liaodong_intelligence = _intelligence_section(intelligence, "辽东")
+        if liaodong_intelligence:
             war_text += "\n\n## 辽东情报\n\n" + _record_blocks(
-                intelligence["辽东"], "时间"
+                liaodong_intelligence, "时间"
             )
-        _write(self.root_dir / "战争记录" / "战争记录.md", war_text)
+        _write(
+            self.root_dir / "02_国家档案" / "05_战争" / "战争记录.md",
+            war_text,
+        )
 
         fiscal_records = _history_matches(
             history,
             ("财", "税", "饷", "银", "粮", "仓", "赈", "户部"),
         )
         fiscal_text = "# 财政报告\n\n" + _record_blocks(fiscal_records, "时间")
-        if intelligence.get("财政"):
+        fiscal_intelligence = _intelligence_section(intelligence, "财政")
+        if fiscal_intelligence:
             fiscal_text += "\n\n## 财政情报\n\n" + _record_blocks(
-                intelligence["财政"], "时间"
+                fiscal_intelligence, "时间"
             )
-        _write(self.root_dir / "财政报告" / "财政报告.md", fiscal_text)
+        _write(
+            self.root_dir / "02_国家档案" / "04_财政" / "财政报告.md",
+            fiscal_text,
+        )
 
         _write(
-            self.root_dir / "诏书全集" / "诏书全集.md",
+            self.root_dir / "01_季度政务" / "02_诏书" / "诏书全集.md",
             "# 诏书全集\n\n" + _record_blocks(edicts, "诏书标题"),
         )
         _write(
-            self.root_dir / "国策路线" / "国策路线.md",
-            "# 国策路线\n\n" + _record_blocks(strategy, "目标"),
+            self.root_dir
+            / "03_国策与战略"
+            / "90_历史策略镜像"
+            / "国策路线.md",
+            "# 国策路线（历史兼容镜像）\n\n> 本文件由旧 data/strategy.json 同步生成，混合保存历史计划、季度建议与执行记录，不是当前长期国策清单。当前长期制度请读取 `大明档案/03_国策与战略/01_制度规则/关键制度源头/01_长期国策有效清单.md`。\n\n"
+            + _record_blocks(strategy, "目标"),
         )
         state_text = "# 国家态势\n\n"
         state_text += "\n\n".join(
             _table_section(section, game_state.get(section, []))
             for section in ("阶层", "田税", "海军", "船种", "党派", "势力", "地块")
         )
-        _write(self.root_dir / "国家态势" / "国家态势总览.md", state_text)
         _write(
-            self.root_dir / "参谋笔记" / "个人战略笔记.md",
+            self.root_dir / "02_国家档案" / "03_国家态势" / "国家态势总览.md",
+            state_text,
+        )
+        _write(
+            self.root_dir / "03_国策与战略" / "05_玩家笔记" / "个人战略笔记.md",
             "# 参谋笔记\n\n" + _record_blocks(personal_notes, "标题"),
         )
         return self.root_dir
 
     def save_analysis_report(self, report: str) -> Path:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        path = self.root_dir / "AI分析报告" / f"局势分析_{timestamp}.md"
+        path = (
+            self.root_dir
+            / "04_辅助资料"
+            / "AI分析报告"
+            / f"局势分析_{timestamp}.md"
+        )
         _write(path, "# AI辅助分析报告\n\n" + report)
         return path

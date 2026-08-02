@@ -4,7 +4,7 @@ const DATASET_LABELS = {
   history: "季度记录",
   personnel: "朝臣档案",
   edicts: "诏书档案",
-  strategy: "国策路线",
+  strategy: "历史策略记录",
   personal_notes: "参谋笔记",
   intelligence: "关键情报",
 };
@@ -76,11 +76,13 @@ const state = {
   archive: null,
   entryDataset: "history",
   recordDataset: "history",
+  quarterlyWorkflowId: "",
 };
 
 const pageTitles = {
   overview: "档案总览",
   entry: "录入资料",
+  quarterly: "季度闭环",
   records: "查看与修改",
   notes: "录入想法",
   uploads: "上传文件",
@@ -149,6 +151,9 @@ function showView(viewName) {
   if (viewName === "notes") {
     renderNotes();
   }
+  if (viewName === "quarterly") {
+    renderQuarterlyWorkflows();
+  }
 }
 
 async function refreshArchive() {
@@ -160,6 +165,7 @@ async function refreshArchive() {
   renderRecordList();
   renderUploads();
   renderNotes();
+  renderQuarterlyWorkflows();
 }
 
 function renderMetrics() {
@@ -175,6 +181,173 @@ function renderMetrics() {
   document.querySelector('[data-count="uploads"]').textContent = String(
     state.archive.uploads?.length || 0,
   );
+}
+
+function lineItems(value) {
+  return String(value || "")
+    .split("\n")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function workflowValue(id, value) {
+  const input = element(id);
+  if (input) {
+    input.value = value || "";
+  }
+}
+
+function resetQuarterlyWorkflow() {
+  state.quarterlyWorkflowId = "";
+  element("quarterly-form").reset();
+  element("quarterly-id").value = "";
+  element("quarterly-workflow-select").value = "";
+  element("quarterly-stage").value = "收集上季反馈";
+  renderQuarterlyReadiness([]);
+}
+
+function renderQuarterlyReadiness(items) {
+  const host = element("quarterly-readiness");
+  if (!host) return;
+  host.replaceChildren();
+  const title = document.createElement("strong");
+  title.textContent = items.length ? "当前待补材料" : "当前提示";
+  const list = document.createElement("ul");
+  (items.length ? items : ["工作单保存后会显示按当前状态计算的待补材料。"])
+    .forEach((item) => {
+      const entry = document.createElement("li");
+      entry.textContent = item;
+      list.append(entry);
+    });
+  host.append(title, list);
+}
+
+function loadQuarterlyWorkflow(workflow) {
+  state.quarterlyWorkflowId = workflow.工作单编号;
+  element("quarterly-id").value = workflow.工作单编号;
+  element("quarterly-workflow-select").value = workflow.工作单编号;
+  workflowValue("quarterly-game-time", workflow.游戏时间);
+  workflowValue("quarterly-stage", workflow.状态);
+  workflowValue("quarterly-feedback-source", workflow.上季反馈来源);
+  workflowValue("quarterly-main-axis", workflow.本季主轴);
+  workflowValue("quarterly-problems", workflow.本季问题);
+  workflowValue("quarterly-consultation", workflow.密谈大臣与问题);
+  workflowValue("quarterly-feasibility", workflow.可行性核验);
+  const drafts = workflow.政令草稿 || {};
+  workflowValue("quarterly-draft-military", (drafts.军事 || []).join("\n"));
+  workflowValue("quarterly-draft-civil", (drafts.内政 || []).join("\n"));
+  workflowValue("quarterly-draft-diplomacy", (drafts.外交 || []).join("\n"));
+  workflowValue("quarterly-draft-other", (drafts.其他 || []).join("\n"));
+  workflowValue("quarterly-edict-title", workflow.正式诏书标题);
+  workflowValue("quarterly-edict-body", workflow.正式诏书正文);
+  workflowValue("quarterly-tasks", workflow.执行任务与验收);
+  workflowValue("quarterly-chronicle-title", workflow.下季朝政纪要标题);
+  workflowValue("quarterly-chronicle-body", workflow.下季朝政纪要原文);
+  workflowValue("quarterly-backfill", workflow.数据回填清单);
+  element("quarterly-edict-confirmed").checked = Boolean(workflow.玩家确认已下诏);
+  element("quarterly-result-confirmed").checked = Boolean(workflow.玩家确认已收到反馈);
+  renderQuarterlyReadiness(workflow.待补提示 || []);
+}
+
+function renderQuarterlyWorkflows() {
+  const picker = element("quarterly-workflow-select");
+  if (!picker || !state.archive) return;
+  const selected = state.quarterlyWorkflowId;
+  picker.replaceChildren();
+  const newOption = document.createElement("option");
+  newOption.value = "";
+  newOption.textContent = "新建工作单";
+  picker.append(newOption);
+  [...(state.archive.quarterly_workflows || [])].reverse().forEach((workflow) => {
+    const option = document.createElement("option");
+    option.value = workflow.工作单编号;
+    option.textContent = `${workflow.游戏时间}｜${workflow.状态}`;
+    picker.append(option);
+  });
+  if (selected && [...picker.options].some((option) => option.value === selected)) {
+    picker.value = selected;
+  }
+}
+
+function collectQuarterlyWorkflow() {
+  return {
+    工作单编号: element("quarterly-id").value.trim(),
+    游戏时间: element("quarterly-game-time").value.trim(),
+    状态: element("quarterly-stage").value,
+    上季反馈来源: element("quarterly-feedback-source").value.trim(),
+    本季主轴: element("quarterly-main-axis").value.trim(),
+    本季问题: element("quarterly-problems").value.trim(),
+    密谈大臣与问题: element("quarterly-consultation").value.trim(),
+    可行性核验: element("quarterly-feasibility").value.trim(),
+    政令草稿: {
+      军事: lineItems(element("quarterly-draft-military").value),
+      内政: lineItems(element("quarterly-draft-civil").value),
+      外交: lineItems(element("quarterly-draft-diplomacy").value),
+      其他: lineItems(element("quarterly-draft-other").value),
+    },
+    正式诏书标题: element("quarterly-edict-title").value.trim(),
+    正式诏书正文: element("quarterly-edict-body").value.trim(),
+    执行任务与验收: element("quarterly-tasks").value.trim(),
+    下季朝政纪要标题: element("quarterly-chronicle-title").value.trim(),
+    下季朝政纪要原文: element("quarterly-chronicle-body").value.trim(),
+    数据回填清单: element("quarterly-backfill").value.trim(),
+    玩家确认已下诏: element("quarterly-edict-confirmed").checked,
+    玩家确认已收到反馈: element("quarterly-result-confirmed").checked,
+  };
+}
+
+async function submitQuarterlyWorkflow(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const submit = form.querySelector('button[type="submit"]');
+  const status = element("quarterly-status");
+  const body = collectQuarterlyWorkflow();
+  if (!body.游戏时间) {
+    status.className = "form-status is-error";
+    status.textContent = "请填写当前游戏时间。";
+    return;
+  }
+  submit.disabled = true;
+  status.className = "form-status";
+  status.textContent = "正在保存工作单";
+  try {
+    const isUpdate = Boolean(state.quarterlyWorkflowId);
+    const path = isUpdate
+      ? `/api/quarterly-workflows/${encodeURIComponent(state.quarterlyWorkflowId)}`
+      : "/api/quarterly-workflows";
+    const payload = await apiRequest(path, {
+      method: isUpdate ? "PUT" : "POST",
+      body: JSON.stringify(body),
+    });
+    loadQuarterlyWorkflow(payload.item);
+    status.className = "form-status is-success";
+    status.textContent = `${payload.message} 工作镜像：${payload.path}`;
+    await refreshArchive();
+    showToast("季度闭环工作单已保存");
+  } catch (error) {
+    status.className = "form-status is-error";
+    status.textContent = error.message;
+  } finally {
+    submit.disabled = false;
+  }
+}
+
+function buildAssistantPrompt() {
+  const data = collectQuarterlyWorkflow();
+  return `你是“崇祯模拟器辅助管理系统”的档案协作 AI。先在线阅读仓库 README.md、CURRENT_ARCHIVE.md、data/current_snapshot.json、data/current_directives.json、data/personnel_current.json、data/quarterly_workflows.json 和大明档案/00_总览/五层证据模型.md；不要先下载整个仓库。\n\n当前工作单：${data.工作单编号 || "新建未保存"}\n游戏时间：${data.游戏时间 || "待填写"}\n工作状态：${data.状态}\n上季反馈来源：${data.上季反馈来源 || "待补"}\n本季主轴：${data.本季主轴 || "待补"}\n本季问题：${data.本季问题 || "待补"}\n密谈材料：${data.密谈大臣与问题 || "待补"}\n可行性核验：${data.可行性核验 || "待补"}\n\n请严格按顺序输出：\n1. 事实表：逐项标记 L1计划/L2诏书/L3游戏结果/L4当前状态，引用文件路径；不得把计划说成事实。\n2. 密谈：建议咨询的朝臣、每位要问的问题、可行与不可行条件、分歧与取舍。\n3. 四板块政令草稿：军事、内政、外交、其他；每项明确负责者、资源、时限、验收和失败线。\n4. 只在我明确确认后，把草稿合并为一份正式诏书；不得自行声称已经提交。\n5. 收到下一季游戏纪要后，提取“实际发生的数据”和“应回填的 JSON/Markdown 清单”，不要用推演替代游戏反馈。\n\n本系统不要求你自动执行游戏、自动更新事实或替玩家决策。`;
+}
+
+async function copyAssistantPrompt() {
+  const prompt = buildAssistantPrompt();
+  const status = element("quarterly-status");
+  try {
+    await navigator.clipboard.writeText(prompt);
+    status.className = "form-status is-success";
+    status.textContent = "协作 AI 提示词已复制；请先保存工作单，外部 AI 才能读取最新材料。";
+  } catch {
+    status.className = "form-status is-error";
+    status.textContent = "浏览器未允许复制，请手动复制页面中的工作单内容。";
+  }
 }
 
 function selectEntryDataset(dataset) {
@@ -614,6 +787,19 @@ function setupInteractions() {
   });
   element("record-search").addEventListener("input", renderRecordList);
   element("note-form").addEventListener("submit", submitPersonalNote);
+  element("quarterly-form").addEventListener("submit", submitQuarterlyWorkflow);
+  element("quarterly-new").addEventListener("click", resetQuarterlyWorkflow);
+  element("quarterly-copy-prompt").addEventListener("click", copyAssistantPrompt);
+  element("quarterly-workflow-select").addEventListener("change", (event) => {
+    const workflow = (state.archive?.quarterly_workflows || []).find(
+      (item) => item.工作单编号 === event.target.value,
+    );
+    if (workflow) {
+      loadQuarterlyWorkflow(workflow);
+    } else {
+      resetQuarterlyWorkflow();
+    }
+  });
 
   element("sync-button").addEventListener("click", async (event) => {
     const button = event.currentTarget;
