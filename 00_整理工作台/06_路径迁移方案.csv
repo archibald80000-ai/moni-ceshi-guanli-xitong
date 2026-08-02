@@ -1,0 +1,323 @@
+﻿原路径,建议新路径,处理方式,迁移理由,是否需要建立索引,是否需要保留原始副本,是否可能破坏其他文件引用,分类置信度,备注
+.gitignore,.gitignore,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+AGENTS.md,AGENTS.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md
+CURRENT_ARCHIVE.md,CURRENT_ARCHIVE.md,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/archive_manifest.json
+README.md,README.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+config/config.example.json,config/config.example.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,配置样例，保留原位
+data/appointments/CZ11-AUTUMN-PERSONNEL-PLAN-1.json,data/appointments/CZ11-AUTUMN-PERSONNEL-PLAN-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json
+data/appointments/CZ11-SUMMER-NATIONAL-OFFICIAL-ROSTER-1.json,data/appointments/CZ11-SUMMER-NATIONAL-OFFICIAL-ROSTER-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | README.md | 大明档案/朝臣档案/崇祯11年夏全国军政要员名册复核.md
+data/appointments/CZ11-SUMMER-PERSONNEL-1.json,data/appointments/CZ11-SUMMER-PERSONNEL-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | README.md
+data/appointments/崇祯10年秋六部侍郎荐举与堂官补实令.json,data/appointments/崇祯10年秋六部侍郎荐举与堂官补实令.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/appointments/崇祯11年春六部正式任命与堂官到任考成.json,data/appointments/崇祯11年春六部正式任命与堂官到任考成.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/appointments/崇祯10年秋六部侍郎荐举与堂官补实令.json
+data/archive_manifest.json,data/archive_manifest.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | CURRENT_ARCHIVE.md | README.md
+data/companies/CZ11-SPRING-FOUR-CORPORATIONS-1.json,data/companies/CZ11-SPRING-FOUR-CORPORATIONS-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/companies/CZ11-SUMMER-FOUR-CORPORATIONS-1.json,data/companies/CZ11-SUMMER-FOUR-CORPORATIONS-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/archive_manifest.json
+data/companies/CZ11-WINTER-FOUR-CORPORATIONS-1.json,data/companies/CZ11-WINTER-FOUR-CORPORATIONS-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/latest_state.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/current_directives.json,data/current_directives.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | CURRENT_ARCHIVE.md | README.md
+data/current_snapshot.json,data/current_snapshot.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | CURRENT_ARCHIVE.md | README.md
+data/edicts.json,data/edicts.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: main.py | modules/ai_analysis.py | modules/database.py
+data/edicts/崇祯10年冬迁民开厂富民增税安业续制诏.json,data/edicts/崇祯10年冬迁民开厂富民增税安业续制诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯10年夏精袭辽阳毁粮练军续制验实诏.json,data/edicts/崇祯10年夏精袭辽阳毁粮练军续制验实诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯10年春竞贸购种兴农安秦续制固藩诏.json,data/edicts/崇祯10年春竞贸购种兴农安秦续制固藩诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯10年秋袭马断粮开厂垦田移民增税诏.json,data/edicts/崇祯10年秋袭马断粮开厂垦田移民增税诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json,data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,是,0.90,引用示例: data/current_snapshot.json | data/latest_state.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/edicts/崇祯11年夏核阶足饷实屯练军兴社续制诏.json,data/edicts/崇祯11年夏核阶足饷实屯练军兴社续制诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯11年春定部考官兴业通货改军御敌验收诏.json,data/edicts/崇祯11年春定部考官兴业通货改军御敌验收诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯11年秋补枢实军兴工通海固本中兴诏.json,data/edicts/崇祯11年秋补枢实军兴工通海固本中兴诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,是,0.90,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/崇祯11年秋中兴收官执行计划.json
+data/edicts/崇祯9年冬定职清费援朝固藩安民续制诏.json,data/edicts/崇祯9年冬定职清费援朝固藩安民续制诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/edicts/崇祯9年秋三层军制核兵练军补给扩械防疫诏.json,data/edicts/崇祯9年秋三层军制核兵练军补给扩械防疫诏.json,保留原位,推定为正式提交诏书，状态为正式提交（结构化记录推定）,是,是,否,0.90,
+data/game_state.json,data/game_state.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,引用示例: AGENTS.md | README.md | modules/database.py
+data/history/CZ10-AUTUMN-EXEC-1.json,data/history/CZ10-AUTUMN-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+data/history/CZ10-SPRING-EXEC-1.json,data/history/CZ10-SPRING-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+data/history/CZ10-SUMMER-EXEC-1.json,data/history/CZ10-SUMMER-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+data/history/CZ11-AUTUMN-EXEC-1.json,data/history/CZ11-AUTUMN-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/current_snapshot.json | data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json | data/latest_state.json
+data/history/CZ11-SPRING-EXEC-1.json,data/history/CZ11-SPRING-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+data/history/CZ11-SUMMER-EXEC-1.json,data/history/CZ11-SUMMER-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: data/archive_manifest.json
+data/history/CZ9-WINTER-EXEC-1.json,data/history/CZ9-WINTER-EXEC-1.json,保留原位,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+data/history_records.json,data/history_records.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: main.py | modules/ai_analysis.py | modules/database.py
+data/infrastructure/CZ11-AUTUMN-INFRA-26-1.json,data/infrastructure/CZ11-AUTUMN-INFRA-26-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json
+data/infrastructure/CZ11-AUTUMN-TWO_CAPITALS_THIRTEEN_PROVINCES-BUILDING-1.json,data/infrastructure/CZ11-AUTUMN-TWO_CAPITALS_THIRTEEN_PROVINCES-BUILDING-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/infrastructure/CZ11-WINTER-INFRASTRUCTURE-PANEL-1.json,data/infrastructure/CZ11-WINTER-INFRASTRUCTURE-PANEL-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/current_snapshot.json | data/latest_state.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/intelligence.json,data/intelligence.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: main.py | modules/ai_analysis.py | modules/database.py
+data/intelligence/CZ11-SUMMER-INTELLIGENCE-ROSTER-1.json,data/intelligence/CZ11-SUMMER-INTELLIGENCE-ROSTER-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/appointments/CZ11-SUMMER-NATIONAL-OFFICIAL-ROSTER-1.json
+data/latest_state.json,data/latest_state.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/military/CZ11-AUTUMN-ARMY-REFORM-1.json,data/military/CZ11-AUTUMN-ARMY-REFORM-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/military/CZ11-AUTUMN-THREE-ARMIES-140K-PLAN-1.json,data/military/CZ11-AUTUMN-THREE-ARMIES-140K-PLAN-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json
+data/military/CZ11-NINE-RANKS-ACADEMY-CHARTER-2.json,data/military/CZ11-NINE-RANKS-ACADEMY-CHARTER-2.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json
+data/military/CZ11-SPRING-THREE-ARMIES-NINE-CORPS-1.json,data/military/CZ11-SPRING-THREE-ARMIES-NINE-CORPS-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/military/CZ11-SUMMER-LOCAL-MILITARY-ROSTER-1.json,data/military/CZ11-SUMMER-LOCAL-MILITARY-ROSTER-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/appointments/CZ11-SUMMER-NATIONAL-OFFICIAL-ROSTER-1.json
+data/military/CZ11-SUMMER-MILITARY-1.json,data/military/CZ11-SUMMER-MILITARY-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/archive_manifest.json
+data/military/CZ11-WINTER-THREE-ARMIES-EQUIPMENT-1.json,data/military/CZ11-WINTER-THREE-ARMIES-EQUIPMENT-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/current_snapshot.json | data/latest_state.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/personal_notes.json,data/personal_notes.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: modules/database.py | web_app.py | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md
+data/personnel.json,data/personnel.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: AGENTS.md | README.md | modules/ai_analysis.py
+data/personnel_current.json,data/personnel_current.json,保留原位,推定为季度结案/当前快照，状态为当前状态（仓库指针，晚于玩家口述前已过时）,是,视引用决定,是,0.99,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | CURRENT_ARCHIVE.md | README.md
+data/policies/CZ11-SUMMER-LOCAL-POLICIES-1.json,data/policies/CZ11-SUMMER-LOCAL-POLICIES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | README.md
+data/province_panels/CZ10-AUTUMN-PROVINCES-1.json,data/province_panels/CZ10-AUTUMN-PROVINCES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/province_panels/CZ10-SUMMER-PROVINCES-1.json,data/province_panels/CZ10-SUMMER-PROVINCES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/province_panels/CZ10-AUTUMN-PROVINCES-1.json | 大明档案/国家态势/崇祯10年夏季各省民心动乱财税面板补录.md
+data/province_panels/CZ11-SPRING-PROVINCES-1.json,data/province_panels/CZ11-SPRING-PROVINCES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+data/province_panels/CZ11-SUMMER-PROVINCES-1.json,data/province_panels/CZ11-SUMMER-PROVINCES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | README.md
+data/province_panels/CZ11-WINTER-PROVINCES-1.json,data/province_panels/CZ11-WINTER-PROVINCES-1.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: data/latest_state.json | data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json
+data/state_snapshots/崇祯10年秋执行快照.json,data/state_snapshots/崇祯10年秋执行快照.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: data/edicts/崇祯10年冬迁民开厂富民增税安业续制诏.json
+data/strategy.json,data/strategy.json,保留原位,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: main.py | modules/ai_analysis.py | modules/database.py
+data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json,data/strategy/CZ11-AUTUMN-NATIONAL-POLICY-1.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/current_directives.json
+data/strategy/崇祯10年冬至11年秋迁民开厂富民增税总考计划.json,data/strategy/崇祯10年冬至11年秋迁民开厂富民增税总考计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+data/strategy/崇祯10年夏执行考成.json,data/strategy/崇祯10年夏执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,否,0.88,
+data/strategy/崇祯10年夏辽阳毁粮与未完成事项收官计划.json,data/strategy/崇祯10年夏辽阳毁粮与未完成事项收官计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+data/strategy/崇祯10年春四项授权冻结执行考成.json,data/strategy/崇祯10年春四项授权冻结执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,否,0.88,
+data/strategy/崇祯10年春方向草案.json,data/strategy/崇祯10年春方向草案.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+data/strategy/崇祯10年秋执行考成.json,data/strategy/崇祯10年秋执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,否,0.88,
+data/strategy/崇祯10年秋袭马开厂垦田移民增税计划.json,data/strategy/崇祯10年秋袭马开厂垦田移民增税计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json,data/strategy/崇祯11年冬五基稳国与军械建筑面板同步收官计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: data/current_snapshot.json | data/latest_state.json
+data/strategy/崇祯11年夏九级军阶与军官部队考成计划.json,data/strategy/崇祯11年夏九级军阶与军官部队考成计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+data/strategy/崇祯11年夏执行考成.json,data/strategy/崇祯11年夏执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: data/edicts/崇祯11年夏核阶足饷实屯练军兴社续制诏.json | data/edicts/崇祯11年秋补枢实军兴工通海固本中兴诏.json | data/strategy/崇祯11年春至冬季度收益型举国兴业军政改制计划.json
+data/strategy/崇祯11年春执行考成.json,data/strategy/崇祯11年春执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: data/edicts/崇祯11年春定部考官兴业通货改军御敌验收诏.json | data/strategy/崇祯11年春至冬季度收益型举国兴业军政改制计划.json
+data/strategy/崇祯11年春至冬季度收益型举国兴业军政改制计划.json,data/strategy/崇祯11年春至冬季度收益型举国兴业军政改制计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json
+data/strategy/崇祯11年秋中兴收官执行计划.json,data/strategy/崇祯11年秋中兴收官执行计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json
+data/strategy/崇祯9年冬财政杂支与全国民心执行考成.json,data/strategy/崇祯9年冬财政杂支与全国民心执行考成.json,保留原位,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,否,0.88,
+data/strategy/崇祯9年冬财政杂支与全国民心拟诏约束.json,data/strategy/崇祯9年冬财政杂支与全国民心拟诏约束.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: data/strategy/崇祯9年冬财政杂支与全国民心执行考成.json
+data/strategy/崇祯9年秋军制军备人才增垦计划.json,data/strategy/崇祯9年秋军制军备人才增垦计划.json,保留原位,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+main.py,main.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+modules/__init__.py,modules/__init__.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+modules/ai_analysis.py,modules/ai_analysis.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: 大明档案/季度目标/崇祯九年春诏书目标折损与季度验收Scale-v2.md
+modules/database.py,modules/database.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+modules/edict_helper.py,modules/edict_helper.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+modules/knowledge_base.py,modules/knowledge_base.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+modules/turn_manager.py,modules/turn_manager.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+skills/writeimperial-compact/SKILL.md,skills/writeimperial-compact/SKILL.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+skills/writeimperial/MEMORY_PROTOCOL.md,skills/writeimperial/MEMORY_PROTOCOL.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+skills/writeimperial/SKILL.md,skills/writeimperial/SKILL.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+skills/writeimperial/agents/openai.yaml,skills/writeimperial/agents/openai.yaml,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+skills/writeimperial/config/execution_scale_v3.json,skills/writeimperial/config/execution_scale_v3.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial/config/execution_scale_v3.schema.json,skills/writeimperial/config/execution_scale_v3.schema.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff | skills/writeimperial_v3_更新包/writeimperial_v3_update/给ChatGPT的修改指令.txt
+skills/writeimperial/references/archive_map.md,skills/writeimperial/references/archive_map.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial/references/edict_rules.md,skills/writeimperial/references/edict_rules.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial/references/institution_lifecycle_v3_1.md,skills/writeimperial/references/institution_lifecycle_v3_1.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md
+skills/writeimperial/references/style_examples.md,skills/writeimperial/references/style_examples.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial/references/target_scale_v3.md,skills/writeimperial/references/target_scale_v3.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial/references/edict_rules.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial/templates/quarterly_scale_feedback.json,skills/writeimperial/templates/quarterly_scale_feedback.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial/references/target_scale_v3.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial/templates/崇祯模拟器诏书撰写记忆模板.md,skills/writeimperial/templates/崇祯模拟器诏书撰写记忆模板.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/MEMORY_PROTOCOL.md
+skills/writeimperial/tests/scale_examples.md,skills/writeimperial/tests/scale_examples.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json,skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/SKILL.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/SKILL.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/references/edict_rules.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/baseline_snapshot/skills/writeimperial/references/edict_rules.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff,skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/SKILL.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/SKILL.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/config/execution_scale_v3.json,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/config/execution_scale_v3.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/config/execution_scale_v3.schema.json,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/config/execution_scale_v3.schema.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff | skills/writeimperial_v3_更新包/writeimperial_v3_update/给ChatGPT的修改指令.txt
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/references/edict_rules.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/references/edict_rules.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/CHANGELOG.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/references/target_scale_v3.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/references/target_scale_v3.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial/references/edict_rules.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/templates/quarterly_scale_feedback.json,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/templates/quarterly_scale_feedback.json,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial/references/target_scale_v3.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json
+skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/tests/scale_examples.md,skills/writeimperial_v3_更新包/writeimperial_v3_update/replacement/skills/writeimperial/tests/scale_examples.md,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial/SKILL.md | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/patch/writeimperial_scale_v3.diff
+skills/writeimperial_v3_更新包/writeimperial_v3_update/给ChatGPT的修改指令.txt,skills/writeimperial_v3_更新包/writeimperial_v3_update/给ChatGPT的修改指令.txt,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | skills/writeimperial_v3_更新包/writeimperial_v3_update/README.md
+uploads/20260729/163e2c52855f4dc9a173bd7e0f4d7143_天启七年冬季朝政纪要.md,90_原始资料/用户上传/20260729/163e2c52855f4dc9a173bd7e0f4d7143_天启七年冬季朝政纪要.md,git mv,推定为原始上传资料，状态为原始资料,是,是,是,0.98,完全重复: 大明档案/朝政纪要/天启年/天启七年冬季朝政纪要.md；引用示例: uploads/index.json
+uploads/20260729/5c87a2313e6b42a19bd09f180b0933e6_天启7年秋诏书.md,90_原始资料/用户上传/20260729/5c87a2313e6b42a19bd09f180b0933e6_天启7年秋诏书.md,git mv,推定为原始上传资料，状态为原始资料,是,是,是,0.98,完全重复: 大明档案/朝政纪要/天启年/天启7年秋诏书.md；引用示例: uploads/index.json
+uploads/20260729/9ec1924f791c49079004faffe19b18fa_天启七年_天下大势.md,90_原始资料/用户上传/20260729/9ec1924f791c49079004faffe19b18fa_天启七年_天下大势.md,git mv,推定为原始上传资料，状态为原始资料,是,是,是,0.98,完全重复: 大明档案/朝政纪要/天启年/天启七年·天下大势.md；引用示例: uploads/index.json
+uploads/index.json,02_长期档案/制度国策/index.json,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: skills/writeimperial/references/archive_map.md | web_app.py | 大明档案/战略方略/崇祯四年冬辽西坚壁清野以空间换时间军政方案.md
+web/app.js,web/app.js,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+web/index.html,web/index.html,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: web_app.py
+web/styles.css,web/styles.css,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: web/index.html | web_app.py
+web_app.py,web_app.py,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,是,0.99,引用示例: web/app.js | 启动网页版.cmd
+启动网页版.cmd,启动网页版.cmd,保留原位,推定为仓库程序/配置，状态为不适用,否,视引用决定,否,0.99,
+大明档案/AI分析报告/崇祯八年冬季·天下兵马总览.md,01_季度回合/崇祯8年/冬/结案与快照原文/崇祯八年冬季·天下兵马总览.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: 大明档案/国策路线/崇祯三年战略与制度国策文档包/崇祯九年至十一年三年十二季度总计划.md | 大明档案/战略方略/崇祯九年春崇祯九年至十一年三年十二季度总计划.md
+大明档案/README.md,02_长期档案/制度国策/README.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+大明档案/制度规则/README.md,02_长期档案/制度国策/README.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+大明档案/制度规则/崇祯11年夏六阁六部九级军阶与密谍制度复核.md,02_长期档案/制度国策/崇祯11年夏六阁六部九级军阶与密谍制度复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/制度规则/崇祯九年春七项基础国策实施章程.md,02_长期档案/制度国策/崇祯九年春七项基础国策实施章程.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/制度规则/README.md | 大明档案/国策路线/国策路线.md
+大明档案/制度规则/崇祯九年春九品考察与事权分管优化方案.md,02_长期档案/制度国策/崇祯九年春九品考察与事权分管优化方案.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/制度规则/README.md | 大明档案/国策路线/国策路线.md
+大明档案/制度规则/崇祯九年春国家预警纠错与韧性建设国策章程.md,02_长期档案/制度国策/崇祯九年春国家预警纠错与韧性建设国策章程.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/制度规则/README.md | 大明档案/国策路线/国策路线.md
+大明档案/制度规则/崇祯十一年秋国策路线执行补录.md,02_长期档案/制度国策/崇祯十一年秋国策路线执行补录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/制度规则/崇祯十一年秋国策路线长期记忆.md,02_长期档案/制度国策/崇祯十一年秋国策路线长期记忆.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/制度规则/崇祯模拟器诏书撰写长期记忆.md,02_长期档案/制度国策/崇祯模拟器诏书撰写长期记忆.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | skills/writeimperial/MEMORY_PROTOCOL.md
+大明档案/参谋笔记/个人战略笔记.md,99_待整理/大明档案/参谋笔记/个人战略笔记.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,是,0.94,引用示例: modules/knowledge_base.py | skills/writeimperial/references/archive_map.md | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md
+大明档案/参谋笔记/崇祯10年春方向草案——固朝续制安秦晋.md,01_季度回合/崇祯10年/春/御前密谈原文/崇祯10年春方向草案——固朝续制安秦晋.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: data/strategy/崇祯10年春方向草案.json
+大明档案/参谋笔记/崇祯八年春季全局复盘.md,01_季度回合/崇祯8年/春/御前密谈原文/崇祯八年春季全局复盘.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/参谋笔记/崇祯八年秋季战略升级精炼方案.md,01_季度回合/崇祯8年/秋/御前密谈原文/崇祯八年秋季战略升级精炼方案.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/参谋笔记/长期记录.md,99_待整理/大明档案/参谋笔记/长期记录.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/国家态势/国家态势总览.md,02_长期档案/两京十三省/国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,完全重复: 大明档案/国家态势/崇祯9年春初期国家态势总览.md；引用示例: data/game_state.json | modules/knowledge_base.py | uploads/index.json
+大明档案/国家态势/崇祯10年夏季军械库存.md,02_长期档案/军队军械/崇祯10年夏季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年夏季各省民心动乱财税面板补录.md,02_长期档案/两京十三省/崇祯10年夏季各省民心动乱财税面板补录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年夏季国家态势总览.md,02_长期档案/两京十三省/崇祯10年夏季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年春季军械库存.md,02_长期档案/军队军械/崇祯10年春季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年春季国家态势总览.md,02_长期档案/两京十三省/崇祯10年春季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年秋十五厂开垦移民与燧发枪三厂记录.md,02_长期档案/两京十三省/崇祯10年秋十五厂开垦移民与燧发枪三厂记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年秋季军械库存.md,02_长期档案/军队军械/崇祯10年秋季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯10年秋季国家态势总览.md,02_长期档案/两京十三省/崇祯10年秋季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年夏全国屯田鼠疫教育与地方政策.md,02_长期档案/两京十三省/崇祯11年夏全国屯田鼠疫教育与地方政策.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年夏季军械库存.md,02_长期档案/军队军械/崇祯11年夏季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年夏季国家态势总览.md,02_长期档案/两京十三省/崇祯11年夏季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年春三军九团三级军制编成.md,02_长期档案/两京十三省/崇祯11年春三军九团三级军制编成.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年春四总社运营与通货特科记录.md,02_长期档案/两京十三省/崇祯11年春四总社运营与通货特科记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年春季军械库存.md,02_长期档案/军队军械/崇祯11年春季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年春季国家态势总览.md,02_长期档案/两京十三省/崇祯11年春季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年秋三军九团十四万新编制计划.md,02_长期档案/两京十三省/崇祯11年秋三军九团十四万新编制计划.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯11年秋两京十三省建筑盘活与新建工程计划.md,02_长期档案/两京十三省/崇祯11年秋两京十三省建筑盘活与新建工程计划.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯7年冬国家态势复盘.md,01_季度回合/崇祯7年/冬/结案与快照原文/崇祯7年冬国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json
+大明档案/国家态势/崇祯7年夏拟诏国家态势.md,02_长期档案/两京十三省/崇祯7年夏拟诏国家态势.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯7年春国家态势复盘.md,01_季度回合/崇祯7年/春/结案与快照原文/崇祯7年春国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯9年冬季军械库存.md,02_长期档案/军队军械/崇祯9年冬季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯9年冬季国家态势总览.md,02_长期档案/两京十三省/崇祯9年冬季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯9年夏季军械库存.md,02_长期档案/军队军械/崇祯9年夏季军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯9年夏季国家态势总览.md,02_长期档案/两京十三省/崇祯9年夏季国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/国家态势/崇祯9年春初期军械库存.md,02_长期档案/军队军械/崇祯9年春初期军械库存.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯9年春初期国家态势总览.md,02_长期档案/两京十三省/崇祯9年春初期国家态势总览.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,完全重复: 大明档案/国家态势/国家态势总览.md；引用示例: data/game_state.json | uploads/index.json | 大明档案/README.md
+大明档案/国家态势/崇祯五年冬国家态势复盘.md,01_季度回合/崇祯5年/冬/结案与快照原文/崇祯五年冬国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯五年春国家面板截图识别.md,02_长期档案/两京十三省/崇祯五年春国家面板截图识别.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯五年秋国家态势复盘.md,01_季度回合/崇祯5年/秋/结案与快照原文/崇祯五年秋国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯六年冬国家态势复盘.md,01_季度回合/崇祯6年/冬/结案与快照原文/崇祯六年冬国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯六年冬拟诏国家态势.md,02_长期档案/两京十三省/崇祯六年冬拟诏国家态势.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯六年夏国家态势复盘.md,01_季度回合/崇祯6年/夏/结案与快照原文/崇祯六年夏国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯六年春国家态势复盘.md,01_季度回合/崇祯6年/春/结案与快照原文/崇祯六年春国家态势复盘.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/国家态势/崇祯六年秋国家态势更新.md,02_长期档案/两京十三省/崇祯六年秋国家态势更新.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: 大明档案/资料索引/上传资料目录.md
+大明档案/国策路线/国策路线.md,01_季度回合/崇祯1年/春/御前密谈原文/国策路线.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: skills/writeimperial/references/archive_map.md | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md
+大明档案/国策路线/崇祯11年夏四总社整改与秋季到期评估.md,01_季度回合/崇祯11年/夏/御前密谈原文/崇祯11年夏四总社整改与秋季到期评估.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+大明档案/国策路线/崇祯三年战略与制度国策文档包/README.md,01_季度回合/崇祯3年/春/御前密谈原文/README.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+大明档案/国策路线/崇祯三年战略与制度国策文档包/上传说明.md,01_季度回合/崇祯3年/春/御前密谈原文/上传说明.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+大明档案/国策路线/崇祯三年战略与制度国策文档包/崇祯九年至十一年三年十二季度总计划.md,01_季度回合/崇祯9年/春/御前密谈原文/崇祯九年至十一年三年十二季度总计划.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,近似重复: 大明档案/战略方略/崇祯九年春崇祯九年至十一年三年十二季度总计划.md；引用示例: uploads/index.json | 大明档案/国策路线/国策路线.md | 大明档案/国策路线/崇祯三年战略与制度国策文档包/README.md
+大明档案/季度目标/README.md,01_季度回合/崇祯2年/春/御前密谈原文/README.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+大明档案/季度目标/崇祯9年冬诏书强制提醒——全国民心不得低于40.md,01_季度回合/崇祯9年/冬/御前密谈原文/崇祯9年冬诏书强制提醒——全国民心不得低于40.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,否,0.89,
+大明档案/季度目标/崇祯九年春诏书目标折损与季度验收Scale-v2.md,01_季度回合/崇祯9年/春/御前密谈原文/崇祯九年春诏书目标折损与季度验收Scale-v2.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: uploads/index.json | 大明档案/国策路线/国策路线.md | 大明档案/国策路线/崇祯三年战略与制度国策文档包/README.md
+大明档案/季度目标/崇祯二年春季度目标与十六季危机倒计时.md,01_季度回合/崇祯2年/春/御前密谈原文/崇祯二年春季度目标与十六季危机倒计时.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/季度目标/README.md | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md | 大明档案/诏书全集/崇祯二年春《全国动员赈秦固边清饷安民诏》.md
+大明档案/密谈记录/崇祯7年春密谈总口径.md,01_季度回合/崇祯7年/春/御前密谈原文/崇祯7年春密谈总口径.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/密谈记录/崇祯9年冬前户部清理季度杂支密谈.md,01_季度回合/崇祯9年/冬/御前密谈原文/崇祯9年冬前户部清理季度杂支密谈.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,是,0.94,引用示例: data/strategy/崇祯9年冬财政杂支与全国民心拟诏约束.json
+大明档案/密谈记录/崇祯9年秋三层军制改革密谈——兵部边军孙承宗卢象升.md,01_季度回合/崇祯9年/秋/御前密谈原文/崇祯9年秋三层军制改革密谈——兵部边军孙承宗卢象升.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/密谈记录/崇祯九年秋御前整饬兼差密谈话术.md,01_季度回合/崇祯9年/秋/御前密谈原文/崇祯九年秋御前整饬兼差密谈话术.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,否,0.94,
+大明档案/密谈记录/崇祯九年陕西决战与防后金突击密谈话术.md,01_季度回合/崇祯9年/春/御前密谈原文/崇祯九年陕西决战与防后金突击密谈话术.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: data/game_state.json | uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/密谈记录/崇祯五年冬六臣密谈话术.md,01_季度回合/崇祯5年/冬/御前密谈原文/崇祯五年冬六臣密谈话术.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: data/strategy.json | uploads/index.json | 大明档案/国策路线/国策路线.md
+大明档案/密谈记录/崇祯五年秋内政边防防疫密谈纪要.md,01_季度回合/崇祯5年/秋/御前密谈原文/崇祯五年秋内政边防防疫密谈纪要.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,是,0.94,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/密谈记录/崇祯六年秋六辅密谈话术.md,01_季度回合/崇祯6年/秋/御前密谈原文/崇祯六年秋六辅密谈话术.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: 大明档案/资料索引/上传资料目录.md
+大明档案/密谈记录/崇祯四年冬六派安抚与辽西坚壁清野密谈话术.md,01_季度回合/崇祯4年/冬/御前密谈原文/崇祯四年冬六派安抚与辽西坚壁清野密谈话术.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/密谈记录/崇祯四年夏六臣密谈话术与三成上考规则.md,01_季度回合/崇祯4年/夏/御前密谈原文/崇祯四年夏六臣密谈话术与三成上考规则.md,git mv,推定为御前密谈/思考过程，状态为草案,是,视引用决定,是,0.94,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/密谈记录/崇祯四年廷议.md,99_待整理/大明档案/密谈记录/崇祯四年廷议.md,git mv,推定为御前密谈/思考过程，状态为历史状态,是,视引用决定,否,0.94,
+大明档案/年度国策/崇祯11年春至冬《举国兴商兴工兴农与军政改制一年总方针目标》.md,02_长期档案/制度国策/崇祯11年春至冬《举国兴商兴工兴农与军政改制一年总方针目标》.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/年度国策/崇祯11年春至冬《季度收益型举国兴业军政改制总计划》.md,02_长期档案/制度国策/崇祯11年春至冬《季度收益型举国兴业军政改制总计划》.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/年度国策/崇祯十一年秋国策路线复核.md,02_长期档案/制度国策/崇祯十一年秋国策路线复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: data/archive_manifest.json
+大明档案/战争记录/崇祯10年夏辽阳夜袭东江恢复与四路靖乱记录.md,02_长期档案/军队军械/崇祯10年夏辽阳夜袭东江恢复与四路靖乱记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯10年春丁丑下城皮岛之战与四路靖乱记录.md,02_长期档案/军队军械/崇祯10年春丁丑下城皮岛之战与四路靖乱记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯10年秋铁岭鞍山夜袭记录.md,02_长期档案/军队军械/崇祯10年秋铁岭鞍山夜袭记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯11年夏辽东三路奇袭与三军整训记录.md,02_长期档案/军队军械/崇祯11年夏辽东三路奇袭与三军整训记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯11年春辽东两路春袭记录.md,02_长期档案/军队军械/崇祯11年春辽东两路春袭记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯9年冬援朝固藩与陕西结案记录.md,02_长期档案/军队军械/崇祯9年冬援朝固藩与陕西结案记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/崇祯9年夏陕西决战与北疆临战记录.md,02_长期档案/军队军械/崇祯9年夏陕西决战与北疆临战记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/战争记录/战争记录.md,02_长期档案/军队军械/战争记录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,近似重复: 大明档案/皇帝日志/季度记录.md | 大明档案/财政报告/财政报告.md；引用示例: skills/writeimperial/references/archive_map.md
+大明档案/战略方略/README.md,01_季度回合/崇祯2年/春/御前密谈原文/README.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: modules/knowledge_base.py | skills/writeimperial_v3_更新包/writeimperial_v3_update/MANIFEST.json | 大明档案/国策路线/国策路线.md
+大明档案/战略方略/《考成养廉五年纲要》1.md,01_季度回合/崇祯5年/秋/御前密谈原文/《考成养廉五年纲要》1.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md
+大明档案/战略方略/《铨选考成养廉合一章程》.md,01_季度回合/崇祯5年/冬/御前密谈原文/《铨选考成养廉合一章程》.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md
+大明档案/战略方略/东江镇制辽五策方略.md,01_季度回合/崇祯2年/春/御前密谈原文/东江镇制辽五策方略.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md
+大明档案/战略方略/京西超级兵工器械厂规划方案.md,02_长期档案/制度国策/京西超级兵工器械厂规划方案.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md
+大明档案/战略方略/六耳军训练方针！.md,01_季度回合/崇祯7年/春/御前密谈原文/六耳军训练方针！.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: data/intelligence.json | data/strategy.json | uploads/index.json
+大明档案/战略方略/崇祯九年春六耳巡核与锦衣密侦双层情报国策.md,01_季度回合/崇祯9年/春/御前密谈原文/崇祯九年春六耳巡核与锦衣密侦双层情报国策.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: uploads/index.json | 大明档案/国策路线/国策路线.md | 大明档案/国策路线/崇祯三年战略与制度国策文档包/README.md
+大明档案/战略方略/崇祯九年春崇祯九年至十一年三年十二季度总计划.md,01_季度回合/崇祯9年/春/御前密谈原文/崇祯九年春崇祯九年至十一年三年十二季度总计划.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,近似重复: 大明档案/国策路线/崇祯三年战略与制度国策文档包/崇祯九年至十一年三年十二季度总计划.md；引用示例: uploads/index.json | 大明档案/国策路线/国策路线.md | 大明档案/国策路线/崇祯三年战略与制度国策文档包/README.md
+大明档案/战略方略/崇祯二年夏己巳阻断与陕西江南危机综合参谋文稿.md,01_季度回合/崇祯2年/夏/御前密谈原文/崇祯二年夏己巳阻断与陕西江南危机综合参谋文稿.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md | 大明档案/资料索引/上传资料目录.md
+大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md,01_季度回合/崇祯2年/春/御前密谈原文/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: 大明档案/战略方略/README.md
+大明档案/战略方略/崇祯五年春开局核心思路.md,01_季度回合/崇祯5年/春/御前密谈原文/崇祯五年春开局核心思路.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: uploads/index.json | 大明档案/战略方略/README.md | 大明档案/资料索引/上传资料目录.md
+大明档案/战略方略/崇祯四年冬辽西坚壁清野以空间换时间军政方案.md,01_季度回合/崇祯4年/冬/御前密谈原文/崇祯四年冬辽西坚壁清野以空间换时间军政方案.md,git mv,推定为御前密谈/思考过程，状态为待执行计划,是,视引用决定,是,0.89,引用示例: uploads/index.json | 大明档案/战略方略/README.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/天启年/你现在是《历史模拟器：崇祯》的游戏参谋与诏书起草官。.md,99_待整理/大明档案/朝政纪要/天启年/你现在是《历史模拟器：崇祯》的游戏参谋与诏书起草官。.md,暂不迁移，建议进入99_待整理,推定为御前密谈/思考过程，状态为原始资料,是,是,否,0.70,内容为AI角色提示词，误置于朝政纪要；季度与正式性无法确认
+大明档案/朝政纪要/天启年/天启7年秋诏书.md,99_待整理/大明档案/朝政纪要/天启年/天启7年秋诏书.md,暂不迁移，建议进入99_待整理,推定为正式提交诏书，状态为无法确认是否正式提交,是,是,是,0.78,内容为诏书但位于朝政纪要，且与uploads原文件完全重复；需玩家确认是否实际提交；完全重复: uploads/20260729/5c87a2313e6b42a19bd09f180b0933e6_天启7年秋诏书.md；引用示例: uploads/index.json | 大明档案/朝政纪要/天启年/你现在是《历史模拟器：崇祯》的游戏参谋与诏书起草官。.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/天启年/天启七年·天下大势.md,01_季度回合/天启7年/秋/朝政纪要原文/天启七年·天下大势.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,完全重复: uploads/20260729/9ec1924f791c49079004faffe19b18fa_天启七年_天下大势.md；引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/天启年/天启七年冬季朝政纪要.md,01_季度回合/天启7年/冬/朝政纪要原文/天启七年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,完全重复: uploads/20260729/163e2c52855f4dc9a173bd7e0f4d7143_天启七年冬季朝政纪要.md；引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯七年/崇祯七年冬季朝政纪要——宣大犒军固边墙，陕疫蔓延剿寇艰.md,01_季度回合/崇祯7年/冬/朝政纪要原文/崇祯七年冬季朝政纪要——宣大犒军固边墙，陕疫蔓延剿寇艰.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/intelligence.json
+大明档案/朝政纪要/崇祯七年/崇祯七年夏季朝政纪要——剿抚初成火器兴，鼠疫西去六耳生.md,01_季度回合/崇祯7年/夏/朝政纪要原文/崇祯七年夏季朝政纪要——剿抚初成火器兴，鼠疫西去六耳生.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯七年/崇祯七年春季朝政纪要.md,01_季度回合/崇祯7年/春/朝政纪要原文/崇祯七年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/history_records.json | data/intelligence.json | 大明档案/国家态势/崇祯7年春国家态势复盘.md
+大明档案/朝政纪要/崇祯七年/崇祯七年秋季朝政纪要——秋防御寇边城固，剿抚扩军火器兴.md,01_季度回合/崇祯7年/秋/朝政纪要原文/崇祯七年秋季朝政纪要——秋防御寇边城固，剿抚扩军火器兴.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/history_records.json | 大明档案/战争记录/战争记录.md | 大明档案/皇帝日志/季度记录.md
+大明档案/朝政纪要/崇祯三年/崇祯三年冬季朝政纪要.md,01_季度回合/崇祯3年/冬/朝政纪要原文/崇祯三年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯三年/崇祯三年夏季朝政纪要.md,01_季度回合/崇祯3年/夏/朝政纪要原文/崇祯三年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯三年/崇祯三年秋季朝政纪要.md,01_季度回合/崇祯3年/秋/朝政纪要原文/崇祯三年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯九年/崇祯九年冬季朝政纪要——五股全销民变息，援朝固藩海路通.md,01_季度回合/崇祯9年/冬/朝政纪要原文/崇祯九年冬季朝政纪要——五股全销民变息，援朝固藩海路通.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/history/CZ9-WINTER-EXEC-1.json | data/strategy/崇祯9年冬财政杂支与全国民心执行考成.json
+大明档案/朝政纪要/崇祯九年/崇祯九年夏季朝政纪要——京西建厂初奠基，陕寇两酋授首，建虏僭号称清.md,01_季度回合/崇祯9年/夏/朝政纪要原文/崇祯九年夏季朝政纪要——京西建厂初奠基，陕寇两酋授首，建虏僭号称清.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯九年/崇祯九年春季朝政纪要——蝗旱肆虐陕局艰，大赏决战争全局.md,01_季度回合/崇祯9年/春/朝政纪要原文/崇祯九年春季朝政纪要——蝗旱肆虐陕局艰，大赏决战争全局.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/game_state.json | uploads/index.json | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯二年/# 崇祯二年春季朝政纪要.md,01_季度回合/崇祯2年/春/朝政纪要原文/# 崇祯二年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯二年/崇祯二年冬季朝政纪要.md,01_季度回合/崇祯2年/冬/朝政纪要原文/崇祯二年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯二年/崇祯二年夏季朝政纪要.md,01_季度回合/崇祯2年/夏/朝政纪要原文/崇祯二年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯二年/崇祯二年秋季朝政纪要.md,01_季度回合/崇祯2年/秋/朝政纪要原文/崇祯二年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯五年/崇祯五年冬季朝政纪要.md,01_季度回合/崇祯5年/冬/朝政纪要原文/崇祯五年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: uploads/index.json | 大明档案/国家态势/崇祯五年冬国家态势复盘.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯五年/崇祯五年夏季朝政纪要.md,01_季度回合/崇祯5年/夏/朝政纪要原文/崇祯五年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯五年/崇祯五年春季朝政纪要.md,01_季度回合/崇祯5年/春/朝政纪要原文/崇祯五年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯五年/崇祯五年秋季朝政纪要.md,01_季度回合/崇祯5年/秋/朝政纪要原文/崇祯五年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: uploads/index.json | 大明档案/国家态势/崇祯五年秋国家态势复盘.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯元年/崇祯元年冬季朝政纪要.md,01_季度回合/崇祯1年/冬/朝政纪要原文/崇祯元年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯元年/崇祯元年夏季朝政纪要.md,01_季度回合/崇祯1年/夏/朝政纪要原文/崇祯元年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯元年/崇祯元年春季朝政纪要.md,01_季度回合/崇祯1年/春/朝政纪要原文/崇祯元年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯元年/崇祯元年秋季朝政纪要.md,01_季度回合/崇祯1年/秋/朝政纪要原文/崇祯元年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯八年/崇祯八年冬季朝政纪要——冬防八镇启边墙，合围初战破闯王.md,01_季度回合/崇祯8年/冬/朝政纪要原文/崇祯八年冬季朝政纪要——冬防八镇启边墙，合围初战破闯王.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯八年/崇祯八年夏季朝政纪要——北疆升级火器兴，洪疫夹攻陕局定.md,01_季度回合/崇祯8年/夏/朝政纪要原文/崇祯八年夏季朝政纪要——北疆升级火器兴，洪疫夹攻陕局定.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯八年/崇祯八年春季朝政纪要——春赏遍施安黎庶，剿抚初成效边患.md,01_季度回合/崇祯8年/春/朝政纪要原文/崇祯八年春季朝政纪要——春赏遍施安黎庶，剿抚初成效边患.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯八年/崇祯八年秋季朝政纪要——赏银遍发百业兴，北疆车营初成军.md,01_季度回合/崇祯8年/秋/朝政纪要原文/崇祯八年秋季朝政纪要——赏银遍发百业兴，北疆车营初成军.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯六年/崇祯六年冬季朝政纪要.md,01_季度回合/崇祯6年/冬/朝政纪要原文/崇祯六年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: uploads/index.json | 大明档案/国家态势/崇祯六年冬国家态势复盘.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯六年/崇祯六年夏季朝政纪要.md,01_季度回合/崇祯6年/夏/朝政纪要原文/崇祯六年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: uploads/index.json | 大明档案/国家态势/崇祯六年夏国家态势复盘.md | 大明档案/国家态势/崇祯六年秋国家态势更新.md
+大明档案/朝政纪要/崇祯六年/崇祯六年春季朝政纪要.md,01_季度回合/崇祯6年/春/朝政纪要原文/崇祯六年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: uploads/index.json | 大明档案/国家态势/崇祯六年春国家态势复盘.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝政纪要/崇祯六年/崇祯六年秋季朝政纪要.md,01_季度回合/崇祯6年/秋/朝政纪要原文/崇祯六年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯十一年/崇祯十一年夏季朝政纪要——首辅薨逝财政虚，三路奇袭辽东惊.md,01_季度回合/崇祯11年/夏/朝政纪要原文/崇祯十一年夏季朝政纪要——首辅薨逝财政虚，三路奇袭辽东惊.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: AGENTS.md | README.md | data/appointments/CZ11-SUMMER-PERSONNEL-1.json
+大明档案/朝政纪要/崇祯十一年/崇祯十一年春季朝政纪要——三军九团定国本，四社开张振百工.md,01_季度回合/崇祯11年/春/朝政纪要原文/崇祯十一年春季朝政纪要——三军九团定国本，四社开张振百工.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/appointments/崇祯10年秋六部侍郎荐举与堂官补实令.json | data/appointments/崇祯11年春六部正式任命与堂官到任考成.json | data/companies/CZ11-SPRING-FOUR-CORPORATIONS-1.json
+大明档案/朝政纪要/崇祯十年/崇祯十年夏季朝政纪要——辽阳焚粮振军威，京西投产百工兴.md,01_季度回合/崇祯10年/夏/朝政纪要原文/崇祯十年夏季朝政纪要——辽阳焚粮振军威，京西投产百工兴.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/history/CZ10-SUMMER-EXEC-1.json | data/strategy/崇祯10年夏执行考成.json
+大明档案/朝政纪要/崇祯十年/崇祯十年春季朝政纪要——春耕安民归屯三环并举，朝鲜称臣皮岛受创.md,01_季度回合/崇祯10年/春/朝政纪要原文/崇祯十年春季朝政纪要——春耕安民归屯三环并举，朝鲜称臣皮岛受创.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/edicts/崇祯10年春竞贸购种兴农安秦续制固藩诏.json | data/strategy/崇祯10年春四项授权冻结执行考成.json | data/strategy/崇祯10年春方向草案.json
+大明档案/朝政纪要/崇祯十年/崇祯十年秋季朝政纪要——铁岭夜袭夺马断粮，十五厂开垦移民并举，燧发枪厂动工，大赏九十二万两收服人心.md,01_季度回合/崇祯10年/秋/朝政纪要原文/崇祯十年秋季朝政纪要——铁岭夜袭夺马断粮，十五厂开垦移民并举，燧发枪厂动工，大赏九十二万两收服人心.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,是,0.97,引用示例: data/edicts/崇祯10年秋袭马断粮开厂垦田移民增税诏.json | data/history/CZ10-AUTUMN-EXEC-1.json | data/province_panels/CZ10-AUTUMN-PROVINCES-1.json
+大明档案/朝政纪要/崇祯四年/崇祯四年冬季朝政纪要.md,01_季度回合/崇祯4年/冬/朝政纪要原文/崇祯四年冬季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯四年/崇祯四年夏季朝政纪要.md,01_季度回合/崇祯4年/夏/朝政纪要原文/崇祯四年夏季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯四年/崇祯四年春季朝政纪要.md,01_季度回合/崇祯4年/春/朝政纪要原文/崇祯四年春季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝政纪要/崇祯四年/崇祯四年秋季朝政纪要.md,01_季度回合/崇祯4年/秋/朝政纪要原文/崇祯四年秋季朝政纪要.md,git mv,推定为游戏AI推演结果/朝政纪要，状态为已执行结果,是,是,否,0.97,
+大明档案/朝臣档案/崇祯10年夏季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯10年夏季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯10年春季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯10年春季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯10年秋季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯10年秋季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯11年夏全国军政要员名册复核.md,02_长期档案/朝廷人事/崇祯11年夏全国军政要员名册复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: README.md
+大明档案/朝臣档案/崇祯11年夏后《全国军政要员名册》原稿.md,02_长期档案/朝廷人事/崇祯11年夏后《全国军政要员名册》原稿.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: AGENTS.md | README.md | data/appointments/CZ11-SUMMER-NATIONAL-OFFICIAL-ROSTER-1.json
+大明档案/朝臣档案/崇祯11年夏季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯11年夏季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯11年春季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯11年春季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯9年冬季六阁六部与朝臣任职复核.md,02_长期档案/朝廷人事/崇祯9年冬季六阁六部与朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯9年夏季朝臣任职复核.md,02_长期档案/朝廷人事/崇祯9年夏季朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/崇祯9年春初期朝臣任职复核.md,02_长期档案/朝廷人事/崇祯9年春初期朝臣任职复核.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: uploads/index.json | 大明档案/README.md | 大明档案/资料索引/上传资料目录.md
+大明档案/朝臣档案/崇祯十一年秋全国军政要员名册补录说明.md,02_长期档案/朝廷人事/崇祯十一年秋全国军政要员名册补录说明.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/朝臣档案/朝臣总档.md,02_长期档案/朝廷人事/朝臣总档.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.93,引用示例: skills/writeimperial/references/archive_map.md | 大明档案/国家态势/崇祯六年秋国家态势更新.md | 大明档案/朝臣档案/崇祯9年春初期朝臣任职复核.md
+大明档案/皇帝日志/季度记录.md,01_季度回合/崇祯1年/春/结案与快照原文/季度记录.md,git mv,推定为季度结案/当前快照，状态为历史状态,是,视引用决定,是,0.88,近似重复: 大明档案/战争记录/战争记录.md | 大明档案/财政报告/财政报告.md；引用示例: skills/writeimperial/references/archive_map.md
+大明档案/诏书全集/崇祯10年冬《迁民开厂富民增税安业续制诏》.md,01_季度回合/崇祯10年/冬/正式诏书原文/崇祯10年冬《迁民开厂富民增税安业续制诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯10年冬迁民开厂富民增税安业续制诏.json | data/strategy/崇祯10年冬至11年秋迁民开厂富民增税总考计划.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯10年夏《精袭辽阳毁粮练军续制验实诏》.md,01_季度回合/崇祯10年/夏/正式诏书原文/崇祯10年夏《精袭辽阳毁粮练军续制验实诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯10年夏精袭辽阳毁粮练军续制验实诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯10年春《竞贸购种兴农安秦续制固藩诏》.md,01_季度回合/崇祯10年/春/正式诏书原文/崇祯10年春《竞贸购种兴农安秦续制固藩诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯10年春竞贸购种兴农安秦续制固藩诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯10年秋《六部侍郎荐举与堂官补实令》.md,01_季度回合/崇祯10年/秋/正式诏书原文/崇祯10年秋《六部侍郎荐举与堂官补实令》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/appointments/崇祯10年秋六部侍郎荐举与堂官补实令.json | 大明档案/朝臣档案/崇祯10年秋季朝臣任职复核.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯10年秋《袭马断粮开厂垦田移民增税诏》.md,01_季度回合/崇祯10年/秋/正式诏书原文/崇祯10年秋《袭马断粮开厂垦田移民增税诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯10年秋袭马断粮开厂垦田移民增税诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯11年冬《刷新军建足械兴商裕民收官诏》.md,01_季度回合/崇祯11年/冬/正式诏书原文/崇祯11年冬《刷新军建足械兴商裕民收官诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/current_snapshot.json | data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json | data/latest_state.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯11年夏《核阶足饷实屯练军兴社续制诏》.md,01_季度回合/崇祯11年/夏/正式诏书原文/崇祯11年夏《核阶足饷实屯练军兴社续制诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯11年夏核阶足饷实屯练军兴社续制诏.json | data/strategy/崇祯11年夏九级军阶与军官部队考成计划.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯11年春《定部考官兴业通货改军御敌验收诏》.md,01_季度回合/崇祯11年/春/正式诏书原文/崇祯11年春《定部考官兴业通货改军御敌验收诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯11年春定部考官兴业通货改军御敌验收诏.json | data/strategy/崇祯11年春执行考成.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯11年秋《补枢实军兴工通海固本中兴诏》.md,01_季度回合/崇祯11年/秋/正式诏书原文/崇祯11年秋《补枢实军兴工通海固本中兴诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,仓库基线权威入口；其时间指针与玩家确认的12年春冲突；引用示例: CURRENT_ARCHIVE.md | data/archive_manifest.json | data/edicts/崇祯11年冬刷新军建足械兴商裕民收官诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯7年冬《验六耳固宣大定陕备春诏》.md,01_季度回合/崇祯7年/冬/正式诏书原文/崇祯7年冬《验六耳固宣大定陕备春诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯7年夏《扩铳设六耳收陕防疫续赏诏》.md,01_季度回合/崇祯7年/夏/正式诏书原文/崇祯7年夏《扩铳设六耳收陕防疫续赏诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯7年春《补刑稳学扩军收陕春耕补库诏》.md,01_季度回合/崇祯7年/春/正式诏书原文/崇祯7年春《补刑稳学扩军收陕春耕补库诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯7年秋.md,01_季度回合/崇祯7年/秋/正式诏书原文/崇祯7年秋.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯8年冬《固八镇防冬备春耕诏》.md,01_季度回合/崇祯8年/冬/正式诏书原文/崇祯8年冬《固八镇防冬备春耕诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯8年夏《固北疆扩火器兴农工大赏天下诏》.md,01_季度回合/崇祯8年/夏/正式诏书原文/崇祯8年夏《固北疆扩火器兴农工大赏天下诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯8年春《治疫定陕扩产兴学大赏天下诏》.md,01_季度回合/崇祯8年/春/正式诏书原文/崇祯8年春《治疫定陕扩产兴学大赏天下诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯8年秋《固北疆开海扩贸兴工兴学大赏天下诏》.md,01_季度回合/崇祯8年/秋/正式诏书原文/崇祯8年秋《固北疆开海扩贸兴工兴学大赏天下诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts.json | uploads/index.json | 大明档案/诏书全集/诏书全集.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯9年冬《定职清费援朝固藩安民续制诏》.md,01_季度回合/崇祯9年/冬/正式诏书原文/崇祯9年冬《定职清费援朝固藩安民续制诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯9年冬定职清费援朝固藩安民续制诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯9年春《固边收陕保春耕扩工兴学续赏诏》.md,01_季度回合/崇祯9年/春/正式诏书原文/崇祯9年春《固边收陕保春耕扩工兴学续赏诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts.json | data/game_state.json | uploads/index.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯9年春追加《敕建京西军械总厂分期试产考成诏》.md,01_季度回合/崇祯9年/春/正式诏书原文/崇祯9年春追加《敕建京西军械总厂分期试产考成诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯9年秋《三层军制核兵练军补给扩械防疫诏》.md,01_季度回合/崇祯9年/秋/正式诏书原文/崇祯9年秋《三层军制核兵练军补给扩械防疫诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/edicts/崇祯9年秋三层军制核兵练军补给扩械防疫诏.json；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯9年秋《御前整饬兼差一次养廉安民诏》.md,01_季度回合/崇祯9年/秋/正式诏书原文/崇祯9年秋《御前整饬兼差一次养廉安民诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯一年冬《多司联查反腐行一条鞭考成法赈陕诏》.md,01_季度回合/崇祯1年/冬/正式诏书原文/崇祯一年冬《多司联查反腐行一条鞭考成法赈陕诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯三年冬《开源节流宽考恤军抚绅平党诏》.md,01_季度回合/崇祯3年/冬/正式诏书原文/崇祯三年冬《开源节流宽考恤军抚绅平党诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯三年夏《防蝗剿寇核账肃贪诏》.md,01_季度回合/崇祯3年/夏/正式诏书原文/崇祯三年夏《防蝗剿寇核账肃贪诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯三年春《勤王定陕修渠防蝗通商核账诏》.md,01_季度回合/崇祯3年/春/正式诏书原文/崇祯三年春《勤王定陕修渠防蝗通商核账诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯三年秋《防炮禁泄抚绅灭蝗定陕诏》.md,01_季度回合/崇祯3年/秋/正式诏书原文/崇祯三年秋《防炮禁泄抚绅灭蝗定陕诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯二年冬《西南捷兵援陕防蝗固关诏》.md,01_季度回合/崇祯2年/冬/正式诏书原文/崇祯二年冬《西南捷兵援陕防蝗固关诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯二年夏《前置阻断己巳赈陕安边补充密诏》.md,01_季度回合/崇祯2年/夏/正式诏书原文/崇祯二年夏《前置阻断己巳赈陕安边补充密诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: 大明档案/战略方略/崇祯二年夏己巳阻断与陕西江南危机综合参谋文稿.md | 大明档案/诏书全集/崇祯二年春《全国动员赈秦固边清饷安民诏》.md | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯二年春《东江镇制辽五策及辽西蓟宣均衡补充诏》.md,01_季度回合/崇祯2年/春/正式诏书原文/崇祯二年春《东江镇制辽五策及辽西蓟宣均衡补充诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md | 大明档案/诏书全集/崇祯二年春《全国动员赈秦固边清饷安民诏》.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯二年春《全国动员赈秦固边清饷安民诏》.md,01_季度回合/崇祯2年/春/正式诏书原文/崇祯二年春《全国动员赈秦固边清饷安民诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,否,0.91,正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯五年冬《守同定陕肃贪建仓抚绅诏》.md,01_季度回合/崇祯5年/冬/正式诏书原文/崇祯五年冬《守同定陕肃贪建仓抚绅诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: data/history_records.json | uploads/index.json | 大明档案/战争记录/战争记录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯五年春《救同截陕晋续撤辽节财防疫诏》.md,01_季度回合/崇祯5年/春/正式诏书原文/崇祯五年春《救同截陕晋续撤辽节财防疫诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯五年秋《防虏报复定陕肃贪建仓抚绅诏》.md,01_季度回合/崇祯5年/秋/正式诏书原文/崇祯五年秋《防虏报复定陕肃贪建仓抚绅诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯六年冬《调军定陕宣捷推种补农诏》.md,01_季度回合/崇祯6年/冬/正式诏书原文/崇祯六年冬《调军定陕宣捷推种补农诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯六年夏《重赏开科救疫赈旱清边兴农核贪诏》.md,01_季度回合/崇祯6年/夏/正式诏书原文/崇祯六年夏《重赏开科救疫赈旱清边兴农核贪诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯六年秋《六辅分任扩军推种赈疫安绅核贪诏》.md,01_季度回合/崇祯6年/秋/正式诏书原文/崇祯六年秋《六辅分任扩军推种赈疫安绅核贪诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/国家态势/崇祯六年秋国家态势更新.md | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯四年冬《全国换防坚壁清野安军济国诏》.md,01_季度回合/崇祯4年/冬/正式诏书原文/崇祯四年冬《全国换防坚壁清野安军济国诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯四年冬《辽西坚壁清野安军抚派固关扰敌诏》.md,01_季度回合/崇祯4年/冬/正式诏书原文/崇祯四年冬《辽西坚壁清野安军抚派固关扰敌诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯四年夏《续赈陕补东江验关开税节帑诏》.md,01_季度回合/崇祯4年/夏/正式诏书原文/崇祯四年夏《续赈陕补东江验关开税节帑诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯四年春《赈陕固关开商屯田诏》.md,01_季度回合/崇祯4年/春/正式诏书原文/崇祯四年春《赈陕固关开商屯田诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/崇祯四年秋《六臣上考定陕固关开税禁炮恤军诏》.md,01_季度回合/崇祯4年/秋/正式诏书原文/崇祯四年秋《六臣上考定陕固关开税禁炮恤军诏》.md,git mv,推定为正式提交诏书，状态为正式提交（目录推定）,是,是,是,0.91,引用示例: uploads/index.json | 大明档案/资料索引/上传资料目录.md；正式性仅由目录推定，迁移前需玩家确认实际提交版本
+大明档案/诏书全集/诏书全集.md,02_长期档案/制度国策/诏书总索引.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史汇编,是,是,是,0.96,诏书汇编与结果摘要，不是单季正式提交稿；引用示例: skills/writeimperial/references/archive_map.md | 大明档案/战略方略/崇祯二年夏己巳阻断与陕西江南危机综合参谋文稿.md | 大明档案/战略方略/崇祯二年春辽东均衡战略与东江五策综合参谋文稿.md
+大明档案/财政报告/崇祯10年夏财政与专项支出对账.md,02_长期档案/财政工商农业/崇祯10年夏财政与专项支出对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯10年春四项授权冻结与财政对账.md,02_长期档案/财政工商农业/崇祯10年春四项授权冻结与财政对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯10年秋财政国策与专项对账.md,02_长期档案/财政工商农业/崇祯10年秋财政国策与专项对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯11年夏财政中枢与专项支出对账.md,02_长期档案/财政工商农业/崇祯11年夏财政中枢与专项支出对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯11年春财政军制四社与谍网对账.md,02_长期档案/财政工商农业/崇祯11年春财政军制四社与谍网对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯9年冬财政四分类与对账.md,02_长期档案/财政工商农业/崇祯9年冬财政四分类与对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/崇祯9年夏财政对账.md,02_长期档案/财政工商农业/崇祯9年夏财政对账.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,
+大明档案/财政报告/财政报告.md,02_长期档案/财政工商农业/财政报告.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,否,0.93,近似重复: 大明档案/战争记录/战争记录.md | 大明档案/皇帝日志/季度记录.md
+大明档案/资料索引/上传资料目录.md,02_长期档案/制度国策/上传资料目录.md,git mv,推定为跨季度长期制度/名册/数据库，状态为历史状态,是,视引用决定,是,0.86,引用示例: skills/writeimperial/references/archive_map.md | web_app.py | 大明档案/国策路线/崇祯三年战略与制度国策文档包/上传说明.md
