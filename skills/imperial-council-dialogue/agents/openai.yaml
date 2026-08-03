@@ -1,0 +1,4 @@
+interface:
+  display_name: "御前密谈"
+  short_description: "以皇帝口吻组织密谈二轮追问政令协同分工与多案研判支持"
+  default_prompt: "Use $imperial-council-dialogue to prepare a fact-grounded imperial consultation for the current quarter."

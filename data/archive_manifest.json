@@ -52,6 +52,7 @@
     "国策设计": "大明档案/03_国策与战略/04_国策设计/README.md",
     "因果合同规则源流": "大明档案/03_国策与战略/01_制度规则/AI起草与档案规则/政令与诏书技能规则归档稿.md",
     "因果合同正式Skill": "skills/writeimperial-causal-ledger/SKILL.md",
+    "御前密谈正式Skill": "skills/imperial-council-dialogue/SKILL.md",
     "机器证据类型": "data/evidence_model.json",
     "十二年春工作台": "大明档案/01_季度政务/05_当前工作台/崇祯十二年/春季/README.md",
     "季度闭环工作单数据": "data/quarterly_workflows.json",

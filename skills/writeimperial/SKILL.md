@@ -11,6 +11,8 @@ Use this skill to produce actionable 崇祯 simulator strategy and诏书 from th
 
 `读最新档案 -> 提取实际基线 -> 判断季度主轴 -> 分类任务 -> 用 Scale v3.1 计算目标 -> 新制度年度考成/日落检查 -> 起草四段诏书 -> 校验拥塞与红线 -> 等待游戏反馈 -> 更新执行系数`
 
+For opening a new consultation, pursuing a minister's first answer, or assigning a main/support/audit collaboration, first use sibling `$imperial-council-dialogue`. Its output remains L1 consultation material. Do not turn it into an L2 edict until the player explicitly confirms the selected direction and submission.
+
 Never use a universal `+30%` bottom-line and `+50%` upper-target rule. Different task types have different growth rates, execution loss, uplift caps, and quarterly correction limits.
 
 For projects whose result depends on a long quantitative chain—such as imperial estates, agriculture, mining, military industry, trade, banks, waterworks, logistics, relief, or large construction—also use sibling `$writeimperial-causal-ledger`. Calculate a Scale v3.1 target here first, then require that skill to prove the full resource, input, output, cost, distribution, and panel-update chain. A causal-ledger projection remains a policy target until later game feedback confirms it.

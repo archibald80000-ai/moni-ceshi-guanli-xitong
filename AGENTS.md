@@ -89,6 +89,8 @@
 
 整理或设计国策方案时优先使用本地 `$design-imperial-policy` Skill；它只协助分类、整理和建立证据链，不自动替玩家决定或执行国策。
 
+拟诏前、追问大臣或安排多部门协同时，优先使用 `$imperial-council-dialogue`：它只生成皇帝口吻的密谈与 L1 方案材料，并须先核对当前证据层；玩家明确采纳后才可交由 `$writeimperial` 起草正式 L2 诏书。
+
 包含经营收入、产量、成本、分配、军械列装、工程投用或面板变化的复杂政令，必须追加使用 `$writeimperial-causal-ledger` 建立因果合同；完整季度工作流仍由 `$writeimperial` 负责，紧凑表达才使用 `$writeimperial-compact`。因果账本中的推演值不得冒充 L3 实际结果。
 
 ## 整理保护规则

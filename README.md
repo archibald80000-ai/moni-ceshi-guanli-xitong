@@ -88,12 +88,15 @@ flowchart LR
 
 | Skill | 用途 |
 |---|---|
-| `$writeimperial` | 完整读档、密谈、Scale v3.1 目标计算、四段诏书与季度反馈闭环 |
+| `$imperial-council-dialogue` | 以皇帝口吻准备开题密谈、二轮追问、政令协同分工与多方案研判；只形成 L1 密谈材料 |
+| `$writeimperial` | 将玩家确认后的密谈结论转为 Scale v3.1 四段诏书，并处理季度反馈闭环 |
 | `$writeimperial-compact` | 将已成立的政策逻辑压缩为紧凑诏书或政令段落 |
 | `$writeimperial-causal-ledger` | 为资源、生产、收入、成本、分配和面板结果建立可倒查的因果合同 |
 | `$design-imperial-policy` | 设计、试行、复核和归档新的长期国策 |
 
 因果合同规则的历史归档稿仍保存在 `大明档案/03_国策与战略/01_制度规则/AI起草与档案规则/政令与诏书技能规则归档稿.md`；正式可调用版本位于 `skills/writeimperial-causal-ledger/SKILL.md`。
+
+拟诏前先使用 `$imperial-council-dialogue`，把密谈话术和取舍保存为 L1；只有玩家明确采纳并确认提交，才交由 `$writeimperial` 形成 L2 正式诏书。
 
 ## 事实与操作边界
 
